@@ -1,5 +1,5 @@
-TIS-100 Puzzle Lua
-==================
+Puzzle Lua
+----------
 
 Puzzles in TIS-100 are implemented as [Lua](http://www.lua.org/) programs.
 
