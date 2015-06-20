@@ -13,7 +13,7 @@ Returns a single string used as the puzzle's title.  If the name is longer than 
 The name will be forced into upper case before displaying if it isn't already.
 
 	function get_name()
-		return “EXAMPLE PUZZLE”
+		return "EXAMPLE PUZZLE"
 	end
 
 

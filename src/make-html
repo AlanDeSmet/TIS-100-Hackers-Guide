@@ -22,7 +22,9 @@ sub main {
 	$title =~ s/</&lt;/g;
 	$title =~ s/>/&gt;/g;
 
-	$body =~ s/(\s)"(.*?)"(\s)/$1“$2”$3/g;
+	# Smart quotes
+	# Disabled because it trashes code.
+	#$body =~ s/(\s)"(.*?)"(\s)/$1“$2”$3/g;
 
 	my $hbody = markdown($body);
 
