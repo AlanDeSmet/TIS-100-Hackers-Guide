@@ -41,7 +41,7 @@ sub main {
 <body>
 
 <h1>
-<a href="index.html">$project_title</a><br>
+<a class="sitetitle" href="index.html">$project_title</a><br>
 $title
 </h1>
 

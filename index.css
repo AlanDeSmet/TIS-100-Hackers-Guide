@@ -7,6 +7,9 @@ body {
 h1,h2,h3 {
 	font-family: 'Michroma', sans-serif;
 }
+h1 a.sitetitle {
+	font-size: 80%;
+}
 code,pre {
 	font-family: 'Roboto Mono';
 }
