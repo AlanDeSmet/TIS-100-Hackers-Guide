@@ -4,181 +4,139 @@
 <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
-
-
 <h1>TIS-100 Hacker's Guide</h1>
-
-
 
 <h2>TIS-100 Assembly</h2>
 
-
-
 <h3>Comments</h3>
 
-<p>The character # and any characters after it on a line are ignored.
-
-
+<p>The character # and any characters after it on a line are ignored.</p>
 
 <h3>Labels</h3>
 
-<p>A label, if present, must be the first thing on the line. It is terminated with a : which must be immediately adjacent to the label. Valid characters for labels are <strong>TODO</strong>.  A line may only have a single label.
-
-
+<p>A label, if present, must be the first thing on the line. It is terminated with a : which must be immediately adjacent to the label. Valid characters for labels are <strong>TODO</strong>.  A line may only have a single label.</p>
 
 <h3>Storage</h3>
 
-<p><strong><code>ACC</code></strong> - Accumulator. Register.  Can be used as a <em>source</em> or <em>destination</em>. Initialized to 0.  Reads and writes are instantaneous.
+<p><strong><code>ACC</code></strong> - Accumulator. Register.  Can be used as a <em>source</em> or <em>destination</em>. Initialized to 0.  Reads and writes are instantaneous.</p>
 
-<p><strong><code>BAK</code></strong> - Backup. Register.  Only <code>SAV</code> and <code>SWP</code> interact with <code>BAK</code>.  The identifier “<code>BAK</code>” is never a valid identifier in a program.
+<p><strong><code>BAK</code></strong> - Backup. Register.  Only <code>SAV</code> and <code>SWP</code> interact with <code>BAK</code>.  The identifier “<code>BAK</code>” is never a valid identifier in a program.</p>
 
-<p><strong><code>NIL</code></strong> - Nothing. Register. Can be used as a <em>source</em>, in which case “0” is returned.  Can be used as a <em>destination</em>, which which case the value is discarded.
+<p><strong><code>NIL</code></strong> - Nothing. Register. Can be used as a <em>source</em>, in which case “0” is returned.  Can be used as a <em>destination</em>, which which case the value is discarded.</p>
 
-<p><strong><code>UP</code></strong>, <strong><code>DOWN</code></strong>, <strong><code>LEFT</code></strong>, <strong><code>RIGHT</code></strong> - Connections to adjacent nodes. Ports.  Can be used as a <em>source</em> or a <em>destination</em>.  When used as a destination, the value cannot be read by the adjacent node in the same cycle that it was written to.  Blocks until a <em>destination</em> value is used as a <em>source</em> by the adjacent node or a <em>source</em> is used as a <em>destination</em> by an adjacent node.
+<p><strong><code>UP</code></strong>, <strong><code>DOWN</code></strong>, <strong><code>LEFT</code></strong>, <strong><code>RIGHT</code></strong> - Connections to adjacent nodes. Ports.  Can be used as a <em>source</em> or a <em>destination</em>.  When used as a destination, the value cannot be read by the adjacent node in the same cycle that it was written to.  Blocks until a <em>destination</em> value is used as a <em>source</em> by the adjacent node or a <em>source</em> is used as a <em>destination</em> by an adjacent node.</p>
 
 <p><strong><code>ANY</code></strong> - Port. Can be used as a <em>source</em>, in which case the value will be read from the first port with a waiting value, as searched in this order: <strong>TODO</strong>.  Can be used as a <em>destination</em>, in which case the value will be written to the first port with a waiting read, as searched in this order: <strong>TODO</strong>.
-or <em>destination</em>
+or <em>destination</em></p>
 
-<p><strong><code>LAST</code></strong> - Port. Refers to the same port used by the last reference to <code>ANY</code>, either in read or write.
+<p><strong><code>LAST</code></strong> - Port. Refers to the same port used by the last reference to <code>ANY</code>, either in read or write.</p>
 
-<p><em>source</em> can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, LAST, or an integer from −999 through 999, inclusive.  If the value is an integer, it is used directory.  Otherwise the register or port is read for the value to use.
+<p><em>source</em> can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, LAST, or an integer from −999 through 999, inclusive.  If the value is an integer, it is used directory.  Otherwise the register or port is read for the value to use.</p>
 
-<p><em>destination</em> can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, or LAST.
-
-
+<p><em>destination</em> can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, or LAST.</p>
 
 <h3>NOP - No Operation - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>NOP</code>
+<p><strong>Syntax:</strong> <code>NOP</code></p>
 
-<p>Does nothing.
-
-
+<p>Does nothing.</p>
 
 <h3>MOV - Move - 1-2 cycles</h3>
 
-<p><strong>Syntax:</strong> <code>MOV</code> <em>source</em> <em>destination</em>
+<p><strong>Syntax:</strong> <code>MOV</code> <em>source</em> <em>destination</em></p>
 
-<p>Reads a value from <em>source</em> and write it to <em>destination</em>.  If <em>source</em> is a port, blocks until a value is present.  If <em>destination</em> is a port, blocks until the value is received.
+<p>Reads a value from <em>source</em> and write it to <em>destination</em>.  If <em>source</em> is a port, blocks until a value is present.  If <em>destination</em> is a port, blocks until the value is received.</p>
 
-<p>1 cycle when writing ACC or NIL.
+<p>1 cycle when writing ACC or NIL.</p>
 
-<p>2 cycles when writing to UP, DOWN, LEFT, or RIGHT, assuming the neighboring node is willing to retrieve the value on the second cycle.  The data is not yet in the port until the end of the first cycle.
-
-
+<p>2 cycles when writing to UP, DOWN, LEFT, or RIGHT, assuming the neighboring node is willing to retrieve the value on the second cycle.  The data is not yet in the port until the end of the first cycle.</p>
 
 <h3>SWP - Swap - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>SWP</code>
+<p><strong>Syntax:</strong> <code>SWP</code></p>
 
-<p>Swaps the values of ACC and BAK
-
-
+<p>Swaps the values of ACC and BAK</p>
 
 <h3>SAV - Save - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>SAV</code>
+<p><strong>Syntax:</strong> <code>SAV</code></p>
 
-<p>Copies the value of ACC to BAK
-
-
+<p>Copies the value of ACC to BAK</p>
 
 <h3>ADD - Add - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>ADD</code> <em>source</em>
+<p><strong>Syntax:</strong> <code>ADD</code> <em>source</em></p>
 
-<p>The <em>source</em> value is added to the value in ACC, and the result placed in ACC. Results greater than 999 are limited to 999.  Results less than −999 are limited to −999.
-
-
+<p>The <em>source</em> value is added to the value in ACC, and the result placed in ACC. Results greater than 999 are limited to 999.  Results less than −999 are limited to −999.</p>
 
 <h3>SUB - Subtract - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>SUB</code> <em>source</em>
+<p><strong>Syntax:</strong> <code>SUB</code> <em>source</em></p>
 
-<p>The <em>source</em> value is subtracted to the value in ACC, and the result placed in ACC. Results greater than 999 are limited to 999.  Results less than −999 are limited to −999.
-
-
+<p>The <em>source</em> value is subtracted to the value in ACC, and the result placed in ACC. Results greater than 999 are limited to 999.  Results less than −999 are limited to −999.</p>
 
 <h3>NEG - Negate - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>NEG</code> <em>source</em>
+<p><strong>Syntax:</strong> <code>NEG</code> <em>source</em></p>
 
-<p>The value in ACC is negative (swapped between positive and negative) and written back into ACC.  0 is left unchanged.
-
-
+<p>The value in ACC is negative (swapped between positive and negative) and written back into ACC.  0 is left unchanged.</p>
 
 <h3>JMP - Jump - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>JMP</code> <em>label</em>
+<p><strong>Syntax:</strong> <code>JMP</code> <em>label</em></p>
 
-<p>Transfer execution to the first instruction after <em>label</em>.
-
-
+<p>Transfer execution to the first instruction after <em>label</em>.</p>
 
 <h3>JEZ - Jump if equal to zero - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>JEZ</code> <em>label</em>
+<p><strong>Syntax:</strong> <code>JEZ</code> <em>label</em></p>
 
-<p>If the ACC is 0, transfer execution to the first instruction after <em>label</em>.
-
-
+<p>If the ACC is 0, transfer execution to the first instruction after <em>label</em>.</p>
 
 <h3>JNZ - Jump if not equal to zero - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>JNZ</code> <em>label</em>
+<p><strong>Syntax:</strong> <code>JNZ</code> <em>label</em></p>
 
-<p>If the ACC is not 0, transfer execution to the first instruction after <em>label</em>.
-
-
+<p>If the ACC is not 0, transfer execution to the first instruction after <em>label</em>.</p>
 
 <h3>JGZ - Jump if greater than zero - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>JGZ</code> <em>label</em>
+<p><strong>Syntax:</strong> <code>JGZ</code> <em>label</em></p>
 
-<p>If the ACC is greater than 0, transfer execution to the first instruction after <em>label</em>.
-
-
+<p>If the ACC is greater than 0, transfer execution to the first instruction after <em>label</em>.</p>
 
 <h3>JLZ - Jump if less than zero - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>JLZ</code> <em>label</em>
+<p><strong>Syntax:</strong> <code>JLZ</code> <em>label</em></p>
 
-<p>If the ACC is greater than 0, transfer execution to the first instruction after <em>label</em>.
-
-
+<p>If the ACC is greater than 0, transfer execution to the first instruction after <em>label</em>.</p>
 
 <h3>JRO - Jump relative offset - 1 cycle</h3>
 
-<p><strong>Syntax:</strong> <code>JRO</code> <em>source</em>
+<p><strong>Syntax:</strong> <code>JRO</code> <em>source</em></p>
 
-<p>Transfer execution to the offset specified by <em>source</em>.  Offset is measured in instructions. Negative offsets can be used to move jump backward, positive offsets to jump forward, or 0 to execute the JRO instruction again.
-
-
+<p>Transfer execution to the offset specified by <em>source</em>.  Offset is measured in instructions. Negative offsets can be used to move jump backward, positive offsets to jump forward, or 0 to execute the JRO instruction again.</p>
 
 <h2>TIS-100 Puzzle Lua</h2>
 
-<p>Puzzles in TIS-100 are implemented as <a href="http://www.lua.org/">Lua</a> programs.
+<p>Puzzles in TIS-100 are implemented as <a href="http://www.lua.org/">Lua</a> programs.</p>
 
-<p>A puzzle must implement the following functions.  None of the functions take arguments.
-
-
+<p>A puzzle must implement the following functions.  None of the functions take arguments.</p>
 
 <h3>get_name()</h3>
 
-<p>Returns a single string used as the puzzle's title.  If the name is longer than 33 characters, it will not display correctly on the program editing screen. <br />
-The name will be forced into upper case before displaying if it isn't already.
+<p>Returns a single string used as the puzzle's title.  If the name is longer than 33 characters, it will not display correctly on the program editing screen.
+The name will be forced into upper case before displaying if it isn't already.</p>
 
 <pre><code>function get_name()
     return “EXAMPLE PUZZLE”
 end
 </code></pre>
 
-
-
 <h3>get_description()</h3>
 
 <p>Returns an array (numbered table) of strings.  Each entry in the array is a bullet point in the puzzle description and will be word-wrapped.  The space to display the description is 33×6; the bullets themselves (">") are outside of this space.
-The name will be forced into upper case before displaying if it isn't already.
+The name will be forced into upper case before displaying if it isn't already.</p>
 
 <pre><code>function get_description()
     return {
@@ -188,11 +146,9 @@ The name will be forced into upper case before displaying if it isn't already.
 end
 </code></pre>
 
-
-
 <h3>get_streams()</h3>
 
-<p>Returns an array (numbered table) of input and output streams. Each stream is itself an array whose elements are
+<p>Returns an array (numbered table) of input and output streams. Each stream is itself an array whose elements are</p>
 
 <ol>
 <li>Type
@@ -205,22 +161,22 @@ end
 </li>
 </ol>
 
-<p>Type must be one of STREAM_INPUT, STREAM_OUTPUT, and STREAM_IMAGE.
+<p>Type must be one of STREAM_INPUT, STREAM_OUTPUT, and STREAM_IMAGE.</p>
 
-<p>The name is a simple string.  For STREAM_INPUT, the name should be 6 characters or less to avoid overlapping other streams.  For STREAM_OUTPUT, the name should be 8 characters or less.  The name is not used for STREAM_IMAGE.
+<p>The name is a simple string.  For STREAM_INPUT, the name should be 6 characters or less to avoid overlapping other streams.  For STREAM_OUTPUT, the name should be 8 characters or less.  The name is not used for STREAM_IMAGE.</p>
 
-<p>The position is an integer from 0 through 3 representing the which column of nodes the stream is connected to. 0 represents the leftmost column and 3 the rightmost column.
+<p>The position is an integer from 0 through 3 representing the which column of nodes the stream is connected to. 0 represents the leftmost column and 3 the rightmost column.</p>
 
-<p>The values are an array of integers.
+<p>The values are an array of integers.</p>
 
-<p> For STREAM_INPUT and STREAM_OUTPUT, the values should be in
+<p>For STREAM_INPUT and STREAM_OUTPUT, the values should be in
 the range -999 through 999.  These streams can only display the
-first 39 elements.
+first 39 elements.</p>
 
 <p>For STREAM_INPUT, the values should be in the range 0 through
 4.  There must be exactly 540 values, enough to fill a 30×18
-image.  The image is filled top to bottom, left to right.  
-The values are interpreted as:
+image.  The image is filled top to bottom, left to right. <br />
+The values are interpreted as:</p>
 
 <table>
 <tr><th>Value</th><th colspan="3">Color</th></tr>
@@ -244,53 +200,49 @@ math.random(min,max) to generate random numbers.  Code should
 not call math.randomseed(seed).
 math.random(min,max) is not the Lua standard one; it has been
 replaced with a custom version (TODOVERIFY)to ensure consistent
-results across platforms.
+results across platforms.</p>
 
 <p>The left side of the display has space for approximately 41
 columns of information.  Additional columns will be rendered
 underneath the nodes.  A STREAM_INPUT occupied about 7 columns,
-a STREAM_OUTPUT about 9, and a STREAM_IMAGE about 34.
-
+a STREAM_OUTPUT about 9, and a STREAM_IMAGE about 34.</p>
 
 <table>
 <tr>
-	<th>Type</th>
-	<th>Min</th>
-	<th>Max</th>
-	<th>Max Count</th>
-	<th>Width</th>
+    <th>Type</th>
+    <th>Min</th>
+    <th>Max</th>
+    <th>Max Count</th>
+    <th>Width</th>
 </tr>
 <tr>
-	<td>STREAM_INPUT</td>
-	<td>-999</td>
-	<td>999</td>
-	<td>39</td>
-	<td>7</td>
+    <td>STREAM_INPUT</td>
+    <td>-999</td>
+    <td>999</td>
+    <td>39</td>
+    <td>7</td>
 </tr>
 <tr>
-	<td>STREAM_OUTPUT</td>
-	<td>-999</td>
-	<td>999</td>
-	<td>39</td>
-	<td>9</td>
+    <td>STREAM_OUTPUT</td>
+    <td>-999</td>
+    <td>999</td>
+    <td>39</td>
+    <td>9</td>
 </tr>
 <tr>
-	<td>STREAM_IMAGE</td>
-	<td>0</td>
-	<td>4</td>
-	<td>540</td>
-	<td>34</td>
+    <td>STREAM_IMAGE</td>
+    <td>0</td>
+    <td>4</td>
+    <td>540</td>
+    <td>34</td>
 </tr>
 </table>
 
-
-
-
 <h3>get_layout()</h3>
 
-<p>Returns an array (numbered table) of types for the nodes.  The array must have exactly 12 elements, and represent the nodes in a 4×3 arrangement.  Valid values are TILE_COMPUTE (program node, T21), TILE_MEMORY (stack memory node, T30), and TILE_DAMAGED (unusable damaged node).
+<p>Returns an array (numbered table) of types for the nodes.  The array must have exactly 12 elements, and represent the nodes in a 4×3 arrangement.  Valid values are TILE_COMPUTE (program node, T21), TILE_MEMORY (stack memory node, T30), and TILE_DAMAGED (unusable damaged node).</p>
 
-<p>In this example the entire right column is damaged, the top and bottom nodes on the left are stack nodes, and the rest are compute nodes.
+<p>In this example the entire right column is damaged, the top and bottom nodes on the left are stack nodes, and the rest are compute nodes.</p>
 
 <pre><code>function get_layout()
     return { 
@@ -301,18 +253,15 @@ a STREAM_OUTPUT about 9, and a STREAM_IMAGE about 34.
 end
 </code></pre>
 
-
 <h2>Acknowledgments</h2>
 
-<p>
-<a rel="license"
-href="http://creativecommons.org/licenses/by-sa/4.0/"><img
-alt="Creative Commons License" style="float:right" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+<p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="float:right" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 Copyright 2015 Alan De Smet.
-This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-<a
-href="https://github.com/AlanDeSmet/TIS-100-Hackers-Guide">Fork
-this on GitHub!</a>
+This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a href="https://github.com/AlanDeSmet/TIS-100-Hackers-Guide">Fork this on GitHub!</a></p>
+
+<p></body>
+</html></p>
 
 </body>
 </html>
