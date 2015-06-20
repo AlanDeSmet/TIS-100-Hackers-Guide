@@ -1,0 +1,27 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	max-width: 45em;
+	margin-left: auto;
+	margin-right: auto;
+}
+h1,h2,h3 {
+	font-family: 'Michroma', sans-serif;
+}
+code,pre {
+	font-family: 'Roboto Mono';
+}
+
+h1 {
+	border-top: 10px solid black;
+	border-bottom: 5px solid black;
+}
+
+h2 {
+	margin-top: 2em;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+h3 {
+	margin-bottom: 0;
+}
