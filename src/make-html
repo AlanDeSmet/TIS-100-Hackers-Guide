@@ -14,13 +14,15 @@ sub main {
 	my $body = <$IN>;
 	close $IN;
 
-	my($title) = ($body =~ /^(.*)\s*\n\s*--*\s*\n/);
+	my($title, $rest) = ($body =~ /^(.*)\s*\n\s*==*\s*\n(.*)/s);
 	if(not defined $title) {
 		die "Error: Could not find title name in $filename.\n";
 	}
 	$title =~ s/&/&amp;/g;
 	$title =~ s/</&lt;/g;
 	$title =~ s/>/&gt;/g;
+
+	$body = $rest;
 
 	# Smart quotes
 	# Disabled because it trashes code.
@@ -38,7 +40,10 @@ sub main {
 </head>
 <body>
 
-<h1><a href="index.html">$project_title</a></h1>
+<h1>
+<a href="index.html">$project_title</a><br>
+$title
+</h1>
 
 $hbody
 

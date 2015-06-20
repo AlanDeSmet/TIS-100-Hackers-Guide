@@ -1,20 +1,23 @@
 Assembly
+========
+
+
+Comments
 --------
-
-
-### Comments
 
 The character # and any characters after it on a line are ignored.
 
 
 
-### Labels
+Labels
+------
 
 A label, if present, must be the first thing on the line. It is terminated with a : which must be immediately adjacent to the label. Valid characters for labels are **TODO**.  A line may only have a single label.
 
 
 
-### Storage
+Storage
+-------
 
 **`ACC`** - Accumulator. Register.  Can be used as a _source_ or _destination_. Initialized to 0.  Reads and writes are instantaneous.
 
@@ -24,8 +27,7 @@ A label, if present, must be the first thing on the line. It is terminated with 
 
 **`UP`**, **`DOWN`**, **`LEFT`**, **`RIGHT`** - Connections to adjacent nodes. Ports.  Can be used as a _source_ or a _destination_.  When used as a destination, the value cannot be read by the adjacent node in the same cycle that it was written to.  Blocks until a _destination_ value is used as a _source_ by the adjacent node or a _source_ is used as a _destination_ by an adjacent node.
 
-**`ANY`** - Port. Can be used as a _source_, in which case the value will be read from the first port with a waiting value, as searched in this order: **TODO**.  Can be used as a _destination_, in which case the value will be written to the first port with a waiting read, as searched in this order: **TODO**.
-or _destination_
+**`ANY`** - Port. Can be used as a _source_, in which case the value will be read from the first port with a waiting value, as searched in the order LEFT, RIGHT, UP, DOWN.  Can be used as a _destination_, in which case the value is available to all ports; it will be cleared from all ports as soon as any adjacent node reads it.  Assuming all adjacent points try to read simulataneously, the winner will be selected in the order UP, LEFT, RIGHT, and DOWN.
 
 **`LAST`** - Port. Refers to the same port used by the last reference to `ANY`, either in read or write.
 
@@ -34,6 +36,8 @@ _source_ can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, LAST, or an integer from â
 _destination_ can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, or LAST.
 
 
+Opcodes
+-------
 
 ### NOP - No Operation - 1 cycle
 
@@ -141,3 +145,6 @@ If the ACC is greater than 0, transfer execution to the first instruction after 
 
 Transfer execution to the offset specified by _source_.  Offset is measured in instructions. Negative offsets can be used to move jump backward, positive offsets to jump forward, or 0 to execute the JRO instruction again.
 
+### Overall Node Behavior
+
+Nodes are evaluted starting at the upper left, moving left to right, and advancing down one row and returning to the left edge upon reaching the end of a row.  This leads to the behavior or using ANY as a destination.
