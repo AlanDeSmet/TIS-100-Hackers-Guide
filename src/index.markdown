@@ -285,14 +285,3 @@ In this example the entire right column is damaged, the top and bottom nodes on 
 	end
 
 
-Acknowledgments
----------------
-
-
-[<img alt="Creative Commons License" style="float:right" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />](http://creativecommons.org/licenses/by-sa/4.0/)
-Copyright 2015 Alan De Smet.
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
-[Fork this on GitHub!](https://github.com/AlanDeSmet/TIS-100-Hackers-Guide)
-
-</body>
-</html>

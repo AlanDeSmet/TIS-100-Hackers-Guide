@@ -25,3 +25,16 @@ h2 {
 h3 {
 	margin-bottom: 0;
 }
+
+div.copyright, div.copyright a {
+	color: #555;
+}
+div.copyright h2 {
+	font-size: 100%;
+	border-bottom: 0;
+	margin-bottom: 0;
+}
+div.copyright p {
+	margin: 0;
+	font-size: 90%;
+}
