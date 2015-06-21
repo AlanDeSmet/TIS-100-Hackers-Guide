@@ -10,7 +10,7 @@ Nodes are evaluted starting at the upper left, moving left to right, and advanci
 Comments
 --------
 
-The character # and any characters after it on a line are ignored.
+The character # and any characters after it on a line are ignored.  Comments may follow a label or opcode and arguments.
 
 
 
