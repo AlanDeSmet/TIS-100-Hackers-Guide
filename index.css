@@ -59,3 +59,16 @@ pre {
 	padding: 0.5em 1em;
 	background-color: #DDD;
 }
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #AAA;
+	padding: 0.1em 0.2em;
+}
+th {
+	font-family: 'Michroma', sans-serif;
+}
