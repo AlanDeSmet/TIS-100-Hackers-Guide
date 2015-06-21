@@ -54,7 +54,7 @@
 
 <p>1 cycle when writing ACC or NIL.</p>
 
-<p>2 cycles when writing to UP, DOWN, LEFT, or RIGHT, assuming the neighboring node is willing to retrieve the value on the second cycle.  The data is not yet in the port until the end of the first cycle.</p>
+<p>2 cycles when writing to UP, DOWN, LEFT, or RIGHT, assuming the neighboring node is willing to retrieve the value on the second cycle.  The data is not yet in the port until the end of the first cycle.  This prevents a single value from travelling multiple nodes in a single cycle.</p>
 
 <h3>SWP - Swap - 1 cycle</h3>
 

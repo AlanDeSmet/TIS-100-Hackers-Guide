@@ -60,7 +60,7 @@ Reads a value from _source_ and write it to _destination_.  If _source_ is a por
 
 1 cycle when writing ACC or NIL.
 
-2 cycles when writing to UP, DOWN, LEFT, or RIGHT, assuming the neighboring node is willing to retrieve the value on the second cycle.  The data is not yet in the port until the end of the first cycle.
+2 cycles when writing to UP, DOWN, LEFT, or RIGHT, assuming the neighboring node is willing to retrieve the value on the second cycle.  The data is not yet in the port until the end of the first cycle.  This prevents a single value from travelling multiple nodes in a single cycle.
 
 
 
