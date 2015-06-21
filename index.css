@@ -3,9 +3,11 @@ body {
 	max-width: 45em;
 	margin-left: auto;
 	margin-right: auto;
+	line-height: 1.4em;
 }
 h1,h2,h3 {
 	font-family: 'Michroma', sans-serif;
+	line-height: 1.2em;
 }
 h1 {
 	font-size: 4em;
