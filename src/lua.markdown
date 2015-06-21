@@ -5,12 +5,19 @@ Puzzles in TIS-100 are implemented as [Lua](http://www.lua.org/) programs.
 
 A puzzle must implement the following functions.  None of the functions take arguments.
 
+Global variables do persist between function calls.  Global variables are discarded when TIS-100 notices and loads an updated version of the puzzle.
+
+
+
 
 
 ### get_name()
 
+`get_name()` is evaluated only once upon load, no later than upon entering the `SPECIFICATION EDITOR`.  It will not be re-evaluated on re-entering the `SPECIFICATION EDITOR`, nor upon entering the program editor. 
+
 Returns a single string used as the puzzle's title.  If the name is longer than 33 characters, it will not display correctly on the program editing screen.
 The name will be forced into upper case before displaying if it isn't already.
+
 
 	function get_name()
 		return "EXAMPLE PUZZLE"
@@ -20,8 +27,11 @@ The name will be forced into upper case before displaying if it isn't already.
 
 ### get_description()
 
+`get_description()` is evaluated only once upon entering the program editor. It will not be re-evaluated.
+
 Returns an array (numbered table) of strings.  Each entry in the array is a bullet point in the puzzle description and will be word-wrapped.  The space to display the description is 33×6; the bullets themselves (">") are outside of this space.
 The name will be forced into upper case before displaying if it isn't already.
+
 
 	function get_description()
 		return {
@@ -33,6 +43,8 @@ The name will be forced into upper case before displaying if it isn't already.
 
 
 ### get_streams()
+
+`get_streams()` is evaluated upon entering `SPECIFICATION EDITOR` to provide compiler error messages.  Evaluated twice more each time you enter the solution editor.  Evaluated once more after finishing the first page of a puzzle.  Evaluated once more after stopping a run.
 
 Returns an array (numbered table) of input and output streams. Each stream is itself an array whose elements are
 
@@ -129,6 +141,8 @@ a `STREAM_OUTPUT` about 9, and a `STREAM_IMAGE` about 34.
 
 
 ### get_layout()
+
+`get_layout()` is evaluated only once upon load, no later than upon entering the program editor.  It will not be re-evaluated on re-entering the `SPECIFICATION EDITOR`, nor upon entering the program editor. 
 
 Returns an array (numbered table) of types for the nodes.  The array must have exactly 12 elements, and represent the nodes in a 4×3 arrangement.  Valid values are `TILE_COMPUTE` (program node, T21), `TILE_MEMORY` (stack memory node, T30), and `TILE_DAMAGED` (unusable damaged node).
 
