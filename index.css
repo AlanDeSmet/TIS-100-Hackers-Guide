@@ -7,8 +7,19 @@ body {
 h1,h2,h3 {
 	font-family: 'Michroma', sans-serif;
 }
-h1 a.sitetitle {
-	font-size: 80%;
+h1 {
+	font-size: 4em;
+	margin-top: 0;
+	border-bottom: 5px solid black;
+}
+h1.sitetitle {
+	font-size: 1.5em;
+	border-bottom: 0;
+	border-top: 10px solid black;
+	margin-top: 1em;
+	margin-bottom: 0;
+}
+h1.sitetitle a {
 	text-decoration: none;
 }
 code,pre {
@@ -16,8 +27,6 @@ code,pre {
 }
 
 h1 {
-	border-top: 10px solid black;
-	border-bottom: 5px solid black;
 }
 
 h2 {
