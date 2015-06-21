@@ -17,7 +17,7 @@ The character # and any characters after it on a line are ignored.
 Labels
 ------
 
-A label, if present, must be the first thing on the line. It is terminated with a : which must be immediately adjacent to the label. Valid characters for labels are **TODO**.  A line may only have a single label.
+A labelif present, must be the first thing on the line. It is terminated with a : which must be immediately adjacent to the label. Valid characters for labels are the letters A through Z, the digits 0 through 9, and the punctuation in the set of ~`$%^&*()_-+={}[]|\;'"<>,.?/ . There are no limitations on which characters may be in which positions of the label. A line may only have a single label.  A label must have at least one character before the colon. Labels may be up to 18 characters long, but the longest addressable label is 14 characters. 
 
 
 
