@@ -1,6 +1,11 @@
 Assembly
 ========
 
+Overall Node Behavior
+---------------------
+
+Nodes are evaluted starting at the upper left, moving left to right, and advancing down one row and returning to the left edge upon reaching the end of a row.  The behavior impacts using `ANY` as a destination.
+
 
 Comments
 --------
@@ -145,6 +150,3 @@ If the ACC is greater than 0, transfer execution to the first instruction after 
 
 Transfer execution to the offset specified by _source_.  Offset is measured in instructions. Negative offsets can be used to move jump backward, positive offsets to jump forward, or 0 to execute the JRO instruction again.
 
-### Overall Node Behavior
-
-Nodes are evaluted starting at the upper left, moving left to right, and advancing down one row and returning to the left edge upon reaching the end of a row.  This leads to the behavior or using ANY as a destination.
