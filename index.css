@@ -52,3 +52,10 @@ div.copyright p {
 	font-size: 90%;
 	font-family: "Roboto Condensed", sans-serif;
 }
+
+pre {
+	margin-left: 1em;
+	border: 1px solid #AAA;
+	padding: 0.5em 1em;
+	background-color: #DDD;
+}
