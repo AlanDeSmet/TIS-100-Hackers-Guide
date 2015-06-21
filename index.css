@@ -71,6 +71,9 @@ td,th {
 	border: 1px solid #AAA;
 	padding: 0.1em 0.2em;
 }
+td.n,th.n { /* Numbers */
+	text-align: right;
+}
 th {
 	font-family: 'Michroma', sans-serif;
 }
