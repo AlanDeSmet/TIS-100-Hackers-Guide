@@ -50,19 +50,19 @@ end
 </li>
 </ol>
 
-<p>Type must be one of STREAM_INPUT, STREAM_OUTPUT, and STREAM_IMAGE.</p>
+<p>Type must be one of <code>STREAM_INPUT</code>, <code>STREAM_OUTPUT</code>, and <code>STREAM_IMAGE</code>.</p>
 
-<p>The name is a simple string.  For STREAM_INPUT, the name should be 6 characters or less to avoid overlapping other streams.  For STREAM_OUTPUT, the name should be 8 characters or less.  The name is not used for STREAM_IMAGE.</p>
+<p>The name is a simple string.  For <code>STREAM_INPUT</code>, the name should be 6 characters or less to avoid overlapping other streams.  For <code>STREAM_OUTPUT</code>, the name should be 8 characters or less.  The name is not used for <code>STREAM_IMAGE</code>.</p>
 
 <p>The position is an integer from 0 through 3 representing the which column of nodes the stream is connected to. 0 represents the leftmost column and 3 the rightmost column.</p>
 
 <p>The values are an array of integers.</p>
 
-<p>For STREAM_INPUT and STREAM_OUTPUT, the values should be in
+<p>For <code>STREAM_INPUT</code> and <code>STREAM_OUTPUT</code>, the values should be in
 the range -999 through 999.  These streams can only display the
 first 39 elements.</p>
 
-<p>For STREAM_INPUT, the values should be in the range 0 through
+<p>For <code>STREAM_INPUT</code>, the values should be in the range 0 through
 4.  There must be exactly 540 values, enough to fill a 30×18
 image.  The image is filled top to bottom, left to right. <br />
 The values are interpreted as:</p>
@@ -76,25 +76,25 @@ The values are interpreted as:</p>
 <tr><td style="text-align:center">4</td><td style="width: 1em; background-color: #c00b0b">&nbsp;</td><td>White</td><td>#c00b0b</td></tr>
 </table>
 
-<p>get_streams() will be called twice, once for the first run of
+<p><code>get_streams()</code> will be called twice, once for the first run of
 a program and again for the second.  The first time math.random()
 will be seeded with a fixed value to ensure that the first page
 is identical between runs.
-The fixed value is the SPEC or SEGMENT number.
+The fixed value is the <code>SPEC</code> or <code>SEGMENT</code> number.
 The second time it is seeded with an
 arbitrary number so that the second page is not predictable.
 Generally the values from
-get_streams() should be randomly generated.  Code should use
-math.random(min,max) to generate random numbers.  Code should
-not call math.randomseed(seed).
-math.random(min,max) is not the Lua standard one; it has been
+<code>get_streams()</code> should be randomly generated.  Code should use
+<code>math.random(min,max)</code> to generate random numbers.  Code should
+not call <code>math.randomseed(seed)</code>.
+<code>math.random(min,max)</code> is not the Lua standard one; it has been
 replaced with a custom version (TODOVERIFY)to ensure consistent
 results across platforms.</p>
 
 <p>The left side of the display has space for approximately 41
 columns of information.  Additional columns will be rendered
-underneath the nodes.  A STREAM_INPUT occupied about 7 columns,
-a STREAM_OUTPUT about 9, and a STREAM_IMAGE about 34.</p>
+underneath the nodes.  A <code>STREAM_INPUT</code> occupied about 7 columns,
+a <code>STREAM_OUTPUT</code> about 9, and a <code>STREAM_IMAGE</code> about 34.</p>
 
 <table>
 <tr>
@@ -105,31 +105,31 @@ a STREAM_OUTPUT about 9, and a STREAM_IMAGE about 34.</p>
     <th>Width</th>
 </tr>
 <tr>
-    <td>STREAM_INPUT</td>
-    <td>-999</td>
-    <td>999</td>
-    <td>39</td>
-    <td>7</td>
+    <td><code>STREAM_INPUT</code></td>
+    <td class="n">-999</td>
+    <td class="n">999</td>
+    <td class="n">39</td>
+    <td class="n">7</td>
 </tr>
 <tr>
-    <td>STREAM_OUTPUT</td>
-    <td>-999</td>
-    <td>999</td>
-    <td>39</td>
-    <td>9</td>
+    <td><code>STREAM_OUTPUT</code></td>
+    <td class="n">-999</td>
+    <td class="n">999</td>
+    <td class="n">39</td>
+    <td class="n">9</td>
 </tr>
 <tr>
-    <td>STREAM_IMAGE</td>
-    <td>0</td>
-    <td>4</td>
-    <td>540</td>
-    <td>34</td>
+    <td><code>STREAM_IMAGE</code></td>
+    <td class="n">0</td>
+    <td class="n">4</td>
+    <td class="n">540</td>
+    <td class="n">34</td>
 </tr>
 </table>
 
 <h3>get_layout()</h3>
 
-<p>Returns an array (numbered table) of types for the nodes.  The array must have exactly 12 elements, and represent the nodes in a 4×3 arrangement.  Valid values are TILE_COMPUTE (program node, T21), TILE_MEMORY (stack memory node, T30), and TILE_DAMAGED (unusable damaged node).</p>
+<p>Returns an array (numbered table) of types for the nodes.  The array must have exactly 12 elements, and represent the nodes in a 4×3 arrangement.  Valid values are <code>TILE_COMPUTE</code> (program node, T21), <code>TILE_MEMORY</code> (stack memory node, T30), and <code>TILE_DAMAGED</code> (unusable damaged node).</p>
 
 <p>In this example the entire right column is damaged, the top and bottom nodes on the left are stack nodes, and the rest are compute nodes.</p>
 

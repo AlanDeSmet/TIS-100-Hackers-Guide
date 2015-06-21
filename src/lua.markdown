@@ -41,19 +41,19 @@ Returns an array (numbered table) of input and output streams. Each stream is it
 3. Position
 4. Values
 
-Type must be one of STREAM_INPUT, STREAM_OUTPUT, and STREAM_IMAGE.
+Type must be one of `STREAM_INPUT`, `STREAM_OUTPUT`, and `STREAM_IMAGE`.
 
-The name is a simple string.  For STREAM_INPUT, the name should be 6 characters or less to avoid overlapping other streams.  For STREAM_OUTPUT, the name should be 8 characters or less.  The name is not used for STREAM_IMAGE.
+The name is a simple string.  For `STREAM_INPUT`, the name should be 6 characters or less to avoid overlapping other streams.  For `STREAM_OUTPUT`, the name should be 8 characters or less.  The name is not used for `STREAM_IMAGE`.
 
 The position is an integer from 0 through 3 representing the which column of nodes the stream is connected to. 0 represents the leftmost column and 3 the rightmost column.
 
 The values are an array of integers.
 
- For STREAM_INPUT and STREAM_OUTPUT, the values should be in
+For `STREAM_INPUT` and `STREAM_OUTPUT`, the values should be in
 the range -999 through 999.  These streams can only display the
 first 39 elements.
 
-For STREAM_INPUT, the values should be in the range 0 through
+For `STREAM_INPUT`, the values should be in the range 0 through
 4.  There must be exactly 540 values, enough to fill a 30×18
 image.  The image is filled top to bottom, left to right.  
 The values are interpreted as:
@@ -67,25 +67,25 @@ The values are interpreted as:
 <tr><td style="text-align:center">4</td><td style="width: 1em; background-color: #c00b0b">&nbsp;</td><td>White</td><td>#c00b0b</td></tr>
 </table>
 
-get_streams() will be called twice, once for the first run of
+`get_streams()` will be called twice, once for the first run of
 a program and again for the second.  The first time math.random()
 will be seeded with a fixed value to ensure that the first page
 is identical between runs.
-The fixed value is the SPEC or SEGMENT number.
+The fixed value is the `SPEC` or `SEGMENT` number.
 The second time it is seeded with an
 arbitrary number so that the second page is not predictable.
 Generally the values from
-get_streams() should be randomly generated.  Code should use
-math.random(min,max) to generate random numbers.  Code should
-not call math.randomseed(seed).
-math.random(min,max) is not the Lua standard one; it has been
+`get_streams()` should be randomly generated.  Code should use
+`math.random(min,max)` to generate random numbers.  Code should
+not call `math.randomseed(seed)`.
+`math.random(min,max)` is not the Lua standard one; it has been
 replaced with a custom version (TODOVERIFY)to ensure consistent
 results across platforms.
 
 The left side of the display has space for approximately 41
 columns of information.  Additional columns will be rendered
-underneath the nodes.  A STREAM_INPUT occupied about 7 columns,
-a STREAM_OUTPUT about 9, and a STREAM_IMAGE about 34.
+underneath the nodes.  A `STREAM_INPUT` occupied about 7 columns,
+a `STREAM_OUTPUT` about 9, and a `STREAM_IMAGE` about 34.
 
 
 <table>
@@ -97,25 +97,25 @@ a STREAM_OUTPUT about 9, and a STREAM_IMAGE about 34.
 	<th>Width</th>
 </tr>
 <tr>
-	<td>STREAM_INPUT</td>
-	<td>-999</td>
-	<td>999</td>
-	<td>39</td>
-	<td>7</td>
+	<td><code>STREAM_INPUT</code></td>
+	<td class="n">-999</td>
+	<td class="n">999</td>
+	<td class="n">39</td>
+	<td class="n">7</td>
 </tr>
 <tr>
-	<td>STREAM_OUTPUT</td>
-	<td>-999</td>
-	<td>999</td>
-	<td>39</td>
-	<td>9</td>
+	<td><code>STREAM_OUTPUT</code></td>
+	<td class="n">-999</td>
+	<td class="n">999</td>
+	<td class="n">39</td>
+	<td class="n">9</td>
 </tr>
 <tr>
-	<td>STREAM_IMAGE</td>
-	<td>0</td>
-	<td>4</td>
-	<td>540</td>
-	<td>34</td>
+	<td><code>STREAM_IMAGE</code></td>
+	<td class="n">0</td>
+	<td class="n">4</td>
+	<td class="n">540</td>
+	<td class="n">34</td>
 </tr>
 </table>
 
@@ -124,7 +124,7 @@ a STREAM_OUTPUT about 9, and a STREAM_IMAGE about 34.
 
 ### get_layout()
 
-Returns an array (numbered table) of types for the nodes.  The array must have exactly 12 elements, and represent the nodes in a 4×3 arrangement.  Valid values are TILE_COMPUTE (program node, T21), TILE_MEMORY (stack memory node, T30), and TILE_DAMAGED (unusable damaged node).
+Returns an array (numbered table) of types for the nodes.  The array must have exactly 12 elements, and represent the nodes in a 4×3 arrangement.  Valid values are `TILE_COMPUTE` (program node, T21), `TILE_MEMORY` (stack memory node, T30), and `TILE_DAMAGED` (unusable damaged node).
 
 In this example the entire right column is damaged, the top and bottom nodes on the left are stack nodes, and the rest are compute nodes.
 
