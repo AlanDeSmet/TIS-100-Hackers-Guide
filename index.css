@@ -11,7 +11,7 @@ h1 a.sitetitle {
 	font-size: 80%;
 }
 code,pre {
-	font-family: 'Roboto Mono';
+	font-family: 'Roboto Mono', monospace;
 }
 
 h1 {
