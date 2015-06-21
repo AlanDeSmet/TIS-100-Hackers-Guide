@@ -127,6 +127,14 @@ a <code>STREAM_OUTPUT</code> about 9, and a <code>STREAM_IMAGE</code> about 34.<
 </tr>
 </table>
 
+<pre><code>function get_streams()
+    return { 
+        { STREAM_INPUT,  "IN", 1, {1,2,3,4,5,6} },
+        { STREAM_OUTPUT, "IN", 1, {1,2,3,4,5,6} },
+    }
+end
+</code></pre>
+
 <h3>get_layout()</h3>
 
 <p>Returns an array (numbered table) of types for the nodes.  The array must have exactly 12 elements, and represent the nodes in a 4×3 arrangement.  Valid values are <code>TILE_COMPUTE</code> (program node, T21), <code>TILE_MEMORY</code> (stack memory node, T30), and <code>TILE_DAMAGED</code> (unusable damaged node).</p>

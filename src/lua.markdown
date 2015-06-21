@@ -119,6 +119,12 @@ a `STREAM_OUTPUT` about 9, and a `STREAM_IMAGE` about 34.
 </tr>
 </table>
 
+	function get_streams()
+		return { 
+			{ STREAM_INPUT,  "IN", 1, {1,2,3,4,5,6} },
+			{ STREAM_OUTPUT, "IN", 1, {1,2,3,4,5,6} },
+		}
+	end
 
 
 
