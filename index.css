@@ -1,6 +1,8 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	max-width: 45em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
 	margin-left: auto;
 	margin-right: auto;
 	line-height: 1.4em;
