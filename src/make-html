@@ -35,6 +35,9 @@ sub main {
 	print <<END;
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <title>$title - $project_title</title>
+<meta content='True' name='HandheldFriendly' />  
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0;' name='viewport' />  
+<meta name="viewport" content="width=device-width" />
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic|Michroma|Roboto+Condensed|Roboto+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="index.css" type="text/css">
 </head>
