@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>Save File Format EARLY DRAFT - TIS-100 Hacker's Guide</title>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic|Michroma|Roboto+Condensed|Roboto+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="index.css" type="text/css">
+</head>
+<body>
+
+<h1 class="sitetitle"> <a class="sitetitle" href="index.html">TIS-100 Hacker's Guide</a><br> </h1>
+<h1> Save File Format EARLY DRAFT </h1>
+
+<p><strong>This is an early draft</strong></p>
+
+<p>Save files are stored in a user specific location:</p>
+
+<ul>
+<li>Windows: TODO
+</li>
+<li>Mac OS X: TODO
+</li>
+<li>Linux: $(HOME)/.local/share/TIS-100/$(USERID)/save and save.dat
+</li>
+</ul>
+
+<p>$(USERID) is a integer number, not zero padded. It may be 17 or 18 digits long.</p>
+
+<h2>Filename</h2>
+
+<p>Save filenames are composed of three parts:</p>
+
+<pre><code>BASE.I.txt
+</code></pre>
+
+<p>For built in puzzles, the BASE filename is the segment number (for example "00150" for the first puzzle, SELF-TEST DIAGNOSTIC).  The number is always 0 padded to 5 digits
+For custom puzzles, it is the prefix "SPEC", followed by the 8 digit SPEC number(for example "19700519").</p>
+
+<p>I is 0, 1, or 2, and correspond with the first, second, and third save slots, respectively.  The number corresponds with the slot, not the order it was saved in.  So if a player selects the third spot at the first and only place to enter a solution, only a "2" file will exist.</p>
+
+<p>.txt is fixed.</p>
+
+<h2>File Format</h2>
+
+<p>The file is broken into nodes.  The nodes are numbered starting with 0 and incrementing up to 11.  The numbers correspond with the nodes in TIS-100 going from left to right and moving down a row and repeating upon reaching the end of a row.</p>
+
+<p><em>Memory and damaged nodes are skipped.</em>  So changing the layout of a puzzle will change which nodes various sections of code appear in.  If there is a surplus of code TODOCHECK it will be appended to the last node until it runs out of space.</p>
+
+<p>TODO: How are too long lines handled?</p>
+
+<p>TODO: How are spurious @ signs handled?</p>
+
+<p>TODO: How are too long nodes handled?</p>
+
+<p>TODO: What if the blank line between nodes is missing?</p>
+
+<p>A node begins at the start of a line with an at sign ("@") immediately followed by a node number.  The following lines, up to 15, are the node's program.  There is then a blank line if another node follows.  If a node has no code, there will be two blank lines between it and the next node.</p>
+
+<h2>save.dat</h2>
+
+<p>save.dat contains the most recent and lowest scores a user as achieved for a given puzzle in nodes, cycles, and instructions.</p>
+
+<pre><code>Best.61212.Nodes = 6
+Best.62711.Cycles = 3768
+Best.62711.Instructions = 51
+
+Last.61212.0.Nodes = 6
+Last.62711.0.Cycles = 3768
+Last.62711.0.Instructions = 51
+Last.SPEC76722950.0.Cycles = 7061
+</code></pre>
+
+<p>They are sorted Best before Last, built in before custom, then by number, for Last scores which save slot, an finally Cycles, then Instructions Nodes.  This corresponds with a direct sort of the ASCII values.</p>
+
+<p>The end of the file has three additional values:</p>
+
+<pre><code>NewUniquePlayerID = 260648815294639196
+Options.Fullscreen = False
+TutorialSeen = True
+</code></pre>
+
+<p>TODO: Are there entries for a puzzle that exists but hasn't been attempted?</p>
+
+<p>TODO: Are entries needed for TIS-100 to "see" the save files?</p>
+
+
+<div class="copyright">
+<h2>Acknowledgments</h2>
+<p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="float:right" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+Copyright 2015 Alan De Smet.
+This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a href="https://github.com/AlanDeSmet/TIS-100-Hackers-Guide/tree/gh-pages">Fork this on GitHub!</a></p>
+</div>
+
+</body>
+</html>
