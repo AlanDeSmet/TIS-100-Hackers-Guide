@@ -74,3 +74,6 @@ Inputs always begin with "IN" and outputs always begin with "OUT".  If there is 
    * ASSUME PRIOR IN VALUES ARE 0
    * THE FIRST VALUE IS ALWAYS 0
    * TWO INTERRUPTS WILL NEVER CHANGE IN THE SAME INPUT CYCLE
+
+This was inspired by [the work of bigalphillips on Reddit](https://www.reddit.com/r/tis100/comments/3a271m/contest_design_a_puzzle_for_the_upcoming_bonus/cscj1za)
+
