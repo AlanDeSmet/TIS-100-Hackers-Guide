@@ -13,11 +13,13 @@
 
 <p>In <a href="lua.html">Puzzle Lua</a> <code>math.random(min,max)</code> and <code>math.randomseed(seed)</code> are not from the main Lua distribution, which is based on the C library's <code>rand()</code> and <code>srand(int)</code>.</p>
 
-<p>Instead they probably come from <a href="http://www.moonsharp.org/">MoonSharp</a>, a Lua interpreter written in C#.  That is probably based on C#'s <a href="http://referencesource.microsoft.com/#mscorlib/system/random.cs,bb77e610694e64ca">random.cs</a>. That, and thus TIS-100, is based on <code>ran3()</code> from <em>Numerical Recipes in C, Second Edition</em>.  <em>That</em> is based on a random number generator by Donald Knuth in <em>Seminumerical Algorithms, second edition</em>, volume 2 of <em>The Art of Computer Programming</em>, sections 3.2-3.3.</p>
+<p>Instead they probably come from <a href="http://www.moonsharp.org/">MoonSharp</a>, a Lua interpreter written in C#.  That is probably calling into Unity's System.Random.  That is probably based on C#'s <a href="http://referencesource.microsoft.com/#mscorlib/system/random.cs,bb77e610694e64ca">random.cs</a>. That, and thus TIS-100, is based on <code>ran3()</code> from <em>Numerical Recipes in C, Second Edition</em>.  <em>That</em> is based on a random number generator by Donald Knuth in <em>Seminumerical Algorithms, second edition</em>, volume 2 of <em>The Art of Computer Programming</em>, sections 3.2-3.3.</p>
 
 <p>The only difference from the <em>Numerical Recipes</em> version (besides the interface) is that MBIG has been replaced with 2147483647 , which is 2<sup>31</sup>-1, or the largest 32-bit signed integer using two's complement.</p>
 
 <p><a href="random/">Implementations in C and Lua, as well as a simple test suite based on output from TIS-100 are available</a></p>
+
+<p>Many thanks to Rohansi on Reddit for discovering the MoonSharp to Unity to C# link and pointing me at the C# implementation.</p>
 
 
 <div class="copyright">

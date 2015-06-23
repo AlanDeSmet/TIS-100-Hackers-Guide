@@ -90,9 +90,7 @@ Generally the values from
 `get_streams()` should be randomly generated.  Code should use
 `math.random(min,max)` to generate random numbers.  Code should
 not call `math.randomseed(seed)`.
-`math.random(min,max)` is not the Lua standard one; it has been
-replaced with a custom version (TODOVERIFY)to ensure consistent
-results across platforms.
+`math.random(min,max)` is based on the C# System.Random, not the version from the primary Lua implementation. [Details on math.random's implementation are available.](random.html)
 
 The left side of the display has space for approximately 41
 columns of information.  Additional columns will be rendered
