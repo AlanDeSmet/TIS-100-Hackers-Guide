@@ -6,7 +6,7 @@ function get_description()
 	return { "Calls math.random(1,3) 39 times",
 		"Then math.random(1,999) 39 times",
 		"Then math.random(-3,-1) 39 times",
-		"Then math.random(-999,999) 39 times",
+		"Then math.random(-99,999) 39 times",
 	}
 end
 
