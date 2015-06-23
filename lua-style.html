@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>Lua Style - TIS-100 Hacker's Guide</title>
+<meta content='True' name='HandheldFriendly' />  
+<meta content='width=device-width; initial-scale=1.0;' name='viewport' />  
+<meta name="viewport" content="width=device-width" />
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic|Michroma|Roboto+Condensed|Roboto+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="index.css" type="text/css">
+</head>
+<body>
+
+<h1 class="sitetitle"> <a class="sitetitle" href="index.html">TIS-100 Hacker's Guide</a><br> </h1>
+<h1> Lua Style </h1>
+
+<p>When writing <a href="lua.html">puzzles in Lua</a>, you may wich to mirror the style used by the official levels.</p>
+
+<p>Inputs always begin with "IN" and outputs always begin with "OUT".  If there is only one of an input or output, that is the entire name.  If there are more than one a single period followed by a single letter or digit is appended.  If the difference between the inputs are meaningless (for example, commutative operations like addition or multiplication), they are "A" and "B" (for example, "IN.A" and "IN.B"). Otherwise a single letter or digit is chosen as best represents the data. (for example, Q for Quotient, R for Remainder, 3 for the 3rd interrupt source, X or the X coordinate)</p>
+
+<h3>Read (Input)</h3>
+
+<ul>
+<li>READ A VALUE FROM IN
+</li>
+<li>READ A COLOR VALUE FROM IN
+</li>
+<li>READ A HEIGHT VALUE FROM IN
+</li>
+<li>READ A LENGTH VALUE FROM IN
+</li>
+<li>READ A WIDTH VALUE FROM IN
+</li>
+<li>READ INDEX VALUES FROM IN
+</li>
+<li>READ AN X VALUE FROM IN
+</li>
+<li>READ A Y VALUE FROM IN
+</li>
+<li>READ A SEQUENCE FROM IN
+</li>
+<li>READ FROM IN.1 THROUGH IN.4
+</li>
+<li>READ VALUES FROM IN
+</li>
+<li>READ VALUES FROM IN.A AND IN.B
+</li>
+</ul>
+
+<h3>Write (Output)</h3>
+
+<ul>
+<li>WRITE 0 TO END THE SEQUENCES
+</li>
+<li>WRITE 1 IF CHANGED BY 10 OR MORE
+</li>
+<li>WRITE 1 TO OUT.X IF IN &lt; 0
+</li>
+<li>WRITE 1 WHEN PATTERN IS FOUND
+</li>
+<li>WRITE IN.A - IN.B TO OUT
+</li>
+<li>WRITE IN.A + IN.B WHEN IN.S = 0
+</li>
+<li>WRITE IN.A WHEN IN.S = 1
+</li>
+<li>WRITE INDEXED VALUE TO OUT
+</li>
+<li>WRITE THE GREATER VALUE TO OUT
+</li>
+<li>WRITE THE INPUT NUMBER WHEN THE VALUE GOES FROM 0 TO 1
+</li>
+<li>WRITE THE LENGTH TO OUT
+</li>
+<li>WRITE THE MAX VALUE TO OUT
+</li>
+<li>WRITE THE PRODUCT TO OUT
+</li>
+<li>WRITE THE QUOTIENT TO OUT
+</li>
+<li>WRITE THE REMAINDER TO OUT
+</li>
+<li>WRITE THE SEQUENCE TO OUT
+</li>
+<li>WRITE THE SUM TO OUT
+</li>
+<li>WRITE THE VALUE TO OUT
+</li>
+<li>WRITE THE SUM OF THE LAST 3 VALUES TO OUT.3 AND THE SUM OF THE LAST 5 VALUES TO OUT.5
+</li>
+<li>IF NOT TRUE, WRITE 0 INSTEAD
+</li>
+<li>WHEN A 1 IS NOT WRITTEN TO AN OUTPUT, WRITE A 0 INSTEAD
+</li>
+</ul>
+
+<h3>Image Output</h3>
+
+<ul>
+<li>DRAW A LINE OF THAT LENGTH AND COLOR, WRAPPING WHEN THE EDGE OF THE IMAGE IS REACHED
+</li>
+<li>DRAW A LINE THAT MANY UNITS LONG TO THE RIGHT OF THE PREVIOUS LINE DRAWN
+</li>
+<li>DRAW A RECTANGLE OF THAT SIZE AT THE SPECIFIED LOCATION
+</li>
+<li>FILL THE IMAGE BUFFER WITH THE SPECIFIED TARGET TEST PATTERN
+</li>
+</ul>
+
+<h3>Read and Write</h3>
+
+<ul>
+<li>READ A VALUE FROM IN.A AND WRITE THE VALUE TO OUT.A
+</li>
+<li>READ A VALUE FROM IN.X AND WRITE THE VALUE TO OUT.X
+</li>
+</ul>
+
+<h3>Operations</h3>
+
+<ul>
+<li>DOUBLE THE VALUE
+</li>
+<li>MULTIPLY THE VALUES
+</li>
+<li>REVERSE THE SEQUENCE
+</li>
+<li>SORT THE SEQUENCE
+</li>
+<li>DIVIDE IN.A BY IN.B
+</li>
+<li>COMPARE VALUE TO PREVIOUS VALUE
+</li>
+<li>LOOK FOR THE PATTERN 1,5,4
+</li>
+<li>LOOK UP INDEX VALUE IN SEQUENCE
+</li>
+</ul>
+
+<h3>Assumptions</h3>
+
+<ul>
+<li>SEQUENCES ARE ZERO-TERMINATED
+</li>
+<li>ASSUME PRIOR IN VALUES ARE 0
+</li>
+<li>THE FIRST VALUE IS ALWAYS 0
+</li>
+<li>TWO INTERRUPTS WILL NEVER CHANGE IN THE SAME INPUT CYCLE
+</li>
+</ul>
+
+
+<div class="copyright">
+<h2>Acknowledgments</h2>
+<p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="float:right" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+Copyright 2015 Alan De Smet.
+This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a href="https://github.com/AlanDeSmet/TIS-100-Hackers-Guide/tree/gh-pages">Fork this on GitHub!</a></p>
+</div>
+
+</body>
+</html>
