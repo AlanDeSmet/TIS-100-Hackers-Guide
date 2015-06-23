@@ -34,7 +34,7 @@ Storage
 
 **`ANY`** - Port. Can be used as a _source_, in which case the value will be read from the first port with a waiting value, as searched in the order LEFT, RIGHT, UP, DOWN.  Can be used as a _destination_, in which case the value is available to all ports; it will be cleared from all ports as soon as any adjacent node reads it.  Assuming all adjacent points try to read simulataneously, the winner will be selected in the order UP, LEFT, RIGHT, and DOWN.
 
-**`LAST`** - Port. Refers to the same port used by the last reference to `ANY`, either in read or write.
+**`LAST`** - Port. Refers to the same port used by the last reference to `ANY`, either in read or write.  If `ANY` has not been used, attempts to use `LAST` as a _source_ will return 0, while attempts to use `LAST` as a _destination_ will block forever.
 
 _source_ can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, LAST, or an integer from −999 through 999, inclusive.  If the value is an integer, it is used directory.  Otherwise the register or port is read for the value to use.
 

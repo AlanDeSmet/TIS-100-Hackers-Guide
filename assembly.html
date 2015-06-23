@@ -35,7 +35,7 @@
 
 <p><strong><code>ANY</code></strong> - Port. Can be used as a <em>source</em>, in which case the value will be read from the first port with a waiting value, as searched in the order LEFT, RIGHT, UP, DOWN.  Can be used as a <em>destination</em>, in which case the value is available to all ports; it will be cleared from all ports as soon as any adjacent node reads it.  Assuming all adjacent points try to read simulataneously, the winner will be selected in the order UP, LEFT, RIGHT, and DOWN.</p>
 
-<p><strong><code>LAST</code></strong> - Port. Refers to the same port used by the last reference to <code>ANY</code>, either in read or write.</p>
+<p><strong><code>LAST</code></strong> - Port. Refers to the same port used by the last reference to <code>ANY</code>, either in read or write.  If <code>ANY</code> has not been used, attempts to use <code>LAST</code> as a <em>source</em> will return 0, while attempts to use <code>LAST</code> as a <em>destination</em> will block forever.</p>
 
 <p><em>source</em> can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, LAST, or an integer from −999 through 999, inclusive.  If the value is an integer, it is used directory.  Otherwise the register or port is read for the value to use.</p>
 
