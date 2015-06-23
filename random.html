@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>math.random() and math.randomseed() - TIS-100 Hacker's Guide</title>
+<meta content='True' name='HandheldFriendly' />  
+<meta content='width=device-width; initial-scale=1.0;' name='viewport' />  
+<meta name="viewport" content="width=device-width" />
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic|Michroma|Roboto+Condensed|Roboto+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="index.css" type="text/css">
+</head>
+<body>
+
+<h1 class="sitetitle"> <a class="sitetitle" href="index.html">TIS-100 Hacker's Guide</a><br> </h1>
+<h1> math.random() and math.randomseed() </h1>
+
+<p>In <a href="lua.html">Puzzle Lua</a> <code>math.random(min,max)</code> and <code>math.randomseed(seed)</code> are not from the main Lua distribution, which is based on the C library's <code>rand()</code> and <code>srand(int)</code>.</p>
+
+<p>Instead they probably come from <a href="http://www.moonsharp.org/">MoonSharp</a>, a Lua interpreter written in C#.  That is probably based on C#'s <a href="http://referencesource.microsoft.com/#mscorlib/system/random.cs,bb77e610694e64ca">random.cs</a>. That, and thus TIS-100, is based on <code>ran3()</code> from <em>Numerical Recipes in C, Second Edition</em>.  <em>That</em> is based on a random number generator by Donald Knuth in <em>Seminumerical Algorithms, second edition</em>, volume 2 of <em>The Art of Computer Programming</em>, sections 3.2-3.3.</p>
+
+<p>The only difference from the <em>Numerical Recipes</em> version (besides the interface) is that MBIG has been replaced with 2147483647 , which is 2<sup>31</sup>-1, or the largest 32-bit signed integer using two's complement.</p>
+
+<p><a href="random/">Implementations in C and Lua, as well as a simple test suite based on output from TIS-100 are available</a></p>
+
+
+<div class="copyright">
+<h2>Acknowledgments</h2>
+<p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="float:right" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+Copyright 2015 Alan De Smet.
+This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a href="https://github.com/AlanDeSmet/TIS-100-Hackers-Guide/tree/gh-pages">Fork this on GitHub!</a></p>
+</div>
+
+</body>
+</html>
