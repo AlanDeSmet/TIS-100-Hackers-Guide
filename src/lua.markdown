@@ -3,6 +3,8 @@ Puzzle Lua
 
 Puzzles in TIS-100 are implemented as [Lua](http://www.lua.org/) programs.
 
+As of June 24, 2015, TIS-100 uses [MoonSharp 0.9.5.0](http://www.moonsharp.org/) to interprete the puzzles.
+
 A puzzle must implement the following functions.  None of the functions take arguments.
 
 Global variables do persist between function calls.  Global variables are discarded when TIS-100 notices and loads an updated version of the puzzle.
