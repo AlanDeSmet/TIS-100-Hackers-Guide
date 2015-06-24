@@ -50,6 +50,15 @@
 
 <h2>Opcodes</h2>
 
+<p>Each opcode has 0, 1, or 2 arguments.  The opcode and arguments must be separated by at least one space or comma, but may be separated by any number of spaces or commas.  The following are all equivalent:</p>
+
+<pre><code>MOV 1 ACC
+MOV,1 ACC
+MOV 1,ACC
+MOV,,,,1,,,,ACC
+MOV , ,1, , ACC
+</code></pre>
+
 <h3>NOP - No Operation - 1 cycle</h3>
 
 <p><strong>Syntax:</strong> <code>NOP</code></p>

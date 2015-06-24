@@ -47,6 +47,15 @@ _destination_ can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, or LAST.
 Opcodes
 -------
 
+Each opcode has 0, 1, or 2 arguments.  The opcode and arguments must be separated by at least one space or comma, but may be separated by any number of spaces or commas.  The following are all equivalent:
+
+    MOV 1 ACC
+    MOV,1 ACC
+    MOV 1,ACC
+    MOV,,,,1,,,,ACC
+    MOV , ,1, , ACC
+
+
 ### NOP - No Operation - 1 cycle
 
 **Syntax:** `NOP`
