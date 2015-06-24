@@ -66,7 +66,7 @@ For `STREAM_INPUT` and `STREAM_OUTPUT`, the values should be in
 the range -999 through 999.  These streams can only display the
 first 39 elements.
 
-For `STREAM_INPUT`, the values should be in the range 0 through
+For `STREAM_IMAGE`, the values should be in the range 0 through
 4.  There must be exactly 540 values, enough to fill a 30×18
 image.  The image is filled top to bottom, left to right.  
 The values are interpreted as:
@@ -79,6 +79,8 @@ The values are interpreted as:
 <tr><td style="text-align:center">3</td><td style="width: 1em; background-color: #fafafa">&nbsp;</td><td>White</td><td>#fafafa</td></tr>
 <tr><td style="text-align:center">4</td><td style="width: 1em; background-color: #c00b0b">&nbsp;</td><td>Red</td><td>#c00b0b</td></tr>
 </table>
+
+([How STREAM_IMAGE behaves from the TIS-100 assembly point of view.](display.html))
 
 `get_streams()` will be called twice, once for the first run of
 a program and again for the second.  The first time math.random()
