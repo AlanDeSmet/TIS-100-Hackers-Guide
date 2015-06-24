@@ -13,7 +13,7 @@
 
 <h2>Overall Node Behavior</h2>
 
-<p>Nodes are evaluted starting at the upper left, moving left to right, and advancing down one row and returning to the left edge upon reaching the end of a row.  The behavior impacts using <code>ANY</code> as a destination.</p>
+<p>The behavior of using <code>ANY</code> as a <em>destination</em> suggests that nodes are evaluted starting at the upper left, moving left to right, and advancing down one row and returning to the left edge upon reaching the end of a row.  This behavior is not guaranteed and may change.</p>
 
 <h2>Comments</h2>
 
@@ -33,7 +33,7 @@
 
 <p><strong><code>UP</code></strong>, <strong><code>DOWN</code></strong>, <strong><code>LEFT</code></strong>, <strong><code>RIGHT</code></strong> - Connections to adjacent nodes. Ports.  Can be used as a <em>source</em> or a <em>destination</em>.  When used as a destination, the value cannot be read by the adjacent node in the same cycle that it was written to.  Blocks until a <em>destination</em> value is used as a <em>source</em> by the adjacent node or a <em>source</em> is used as a <em>destination</em> by an adjacent node.</p>
 
-<p><strong><code>ANY</code></strong> - Port. Can be used as a <em>source</em>, in which case the value will be read from the first port with a waiting value, as searched in the order LEFT, RIGHT, UP, DOWN.  Can be used as a <em>destination</em>, in which case the value is available to all ports; it will be cleared from all ports as soon as any adjacent node reads it.  Assuming all adjacent points try to read simulataneously, the winner will be selected in the order UP, LEFT, RIGHT, and DOWN.</p>
+<p><strong><code>ANY</code></strong> - Port. Can be used as a <em>source</em>, in which case the value will be read from the first port with a waiting value, as searched in the order LEFT, RIGHT, UP, DOWN.  Can be used as a <em>destination</em>, in which case the value is available to all ports; it will be cleared from all ports as soon as any adjacent node reads it.  Assuming all adjacent points try to read simulataneously, the winner will be selected in the order UP, LEFT, RIGHT, and DOWN.  The search order is not formally part of the TIS-100 description, so it may change in future releases.</p>
 
 <p><strong><code>LAST</code></strong> - Port. Refers to the same port used by the last reference to <code>ANY</code>, either in read or write.  If <code>ANY</code> has not been used, attempts to use <code>LAST</code> as a <em>source</em> will return 0, while attempts to use <code>LAST</code> as a <em>destination</em> will block forever.</p>
 

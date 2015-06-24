@@ -4,8 +4,7 @@ Assembly
 Overall Node Behavior
 ---------------------
 
-Nodes are evaluted starting at the upper left, moving left to right, and advancing down one row and returning to the left edge upon reaching the end of a row.  The behavior impacts using `ANY` as a destination.
-
+The behavior of using `ANY` as a _destination_ suggests that nodes are evaluted starting at the upper left, moving left to right, and advancing down one row and returning to the left edge upon reaching the end of a row.  This behavior is not guaranteed and may change.
 
 Comments
 --------
@@ -32,7 +31,7 @@ Storage
 
 **`UP`**, **`DOWN`**, **`LEFT`**, **`RIGHT`** - Connections to adjacent nodes. Ports.  Can be used as a _source_ or a _destination_.  When used as a destination, the value cannot be read by the adjacent node in the same cycle that it was written to.  Blocks until a _destination_ value is used as a _source_ by the adjacent node or a _source_ is used as a _destination_ by an adjacent node.
 
-**`ANY`** - Port. Can be used as a _source_, in which case the value will be read from the first port with a waiting value, as searched in the order LEFT, RIGHT, UP, DOWN.  Can be used as a _destination_, in which case the value is available to all ports; it will be cleared from all ports as soon as any adjacent node reads it.  Assuming all adjacent points try to read simulataneously, the winner will be selected in the order UP, LEFT, RIGHT, and DOWN.
+**`ANY`** - Port. Can be used as a _source_, in which case the value will be read from the first port with a waiting value, as searched in the order LEFT, RIGHT, UP, DOWN.  Can be used as a _destination_, in which case the value is available to all ports; it will be cleared from all ports as soon as any adjacent node reads it.  Assuming all adjacent points try to read simulataneously, the winner will be selected in the order UP, LEFT, RIGHT, and DOWN.  The search order is not formally part of the TIS-100 description, so it may change in future releases.
 
 **`LAST`** - Port. Refers to the same port used by the last reference to `ANY`, either in read or write.  If `ANY` has not been used, attempts to use `LAST` as a _source_ will return 0, while attempts to use `LAST` as a _destination_ will block forever.
 
