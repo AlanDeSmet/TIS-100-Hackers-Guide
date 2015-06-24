@@ -21,13 +21,13 @@ Output must consist of:
 3. Zero or more pixel colors, 0-4
 4. Any negative value as a terminator
 
-The pixel colors will be drawn starting at the X,Y coordinate and moving right. TODOCONFIRM: If there are enough entries to exceed the maximum X value (29 or 35), the extra values are discarded. (This behavior is not guaranteed)
+The pixel colors will be drawn starting at the X,Y coordinate and moving right. If there are enough entries to exceed the maximum X value (29 or 35), the extra values are discarded. (This behavior is not guaranteed)
 
-TODOCONFIRM: If the X or Y coordinates out outside of the display, the values are discarded. TODO: What if you start negative X but eventually arrive into valid X?
+If the X or Y coordinates are larger than the maximum X and Y coordinates of the display, the following pixel colors are discarded.
+
 Pixels are drawn as soon as the respective color arrives in the output stream.  They do _not_ wait until the terminator arrives.
 
 Colors with values in excess of 4 are treated as "0".  Negative color values are not possible, as that indicates the terminator.
 
 A negative X or Y coordinate is treated as a terminator; nothing is drawn and the next digit is expected to be an X coordinate.
 
-Colors drawn beyond the maximum X or Y coordinate, either by explicitly addressing the point or by specifying enough pixel colors to travel beyond the maximum X,  are ignored.
