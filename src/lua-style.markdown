@@ -11,7 +11,7 @@ Inputs always begin with "IN" and outputs always begin with "OUT".  If there is 
 Description Phrasing
 --------------------
 
-The description can be up to 6 lines, each 33 characters long, with word wrapping.
+The description can be up to 6 lines, each 33 characters long, with word wrapping.  These are phrases used in the official puzzles.
 
 ### Read (Input)
 
