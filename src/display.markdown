@@ -1,7 +1,7 @@
 Graphics Display
 ================
 
-The "visualization module" or `[STREAM_IMAGE](lua.html)` is an output stream that is interpreted as drawing commands.  In puzzles the display is 30 pixels wide by 18 pixels tall.  In the `IMAGE CONSOLE SANDBOX` the display is 36 pixels wide by 22 pixels tall.  The display is indexed from 0, with 0,0 being the upper left corner and 29,17 being the bottom right for a puzzle display.
+The "visualization module" or [`STREAM_IMAGE`](lua.html) is an output stream that is interpreted as drawing commands.  In puzzles the display is 30 pixels wide by 18 pixels tall.  In the `IMAGE CONSOLE SANDBOX` the display is 36 pixels wide by 22 pixels tall.  The display is indexed from 0, with 0,0 being the upper left corner and 29,17 being the bottom right for a puzzle display.
 
 The display is capable of displaying 5 different colors:
 
@@ -14,7 +14,7 @@ The display is capable of displaying 5 different colors:
 <tr><td style="text-align:center">4</td><td style="width: 1em; background-color: #c00b0b">&nbsp;</td><td>Red</td><td>#c00b0b</td></tr>
 </table>
 
-Output must consist of:
+Output from the [TIS-100 assembly](assembly.html) must consist of:
 
 1. An X coordinate
 2. A Y coordinate
