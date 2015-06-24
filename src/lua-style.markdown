@@ -3,16 +3,21 @@ Lua Style
 
 When writing [puzzles in Lua](lua.html), you may wich to mirror the style used by the official levels.
 
+Input and Output Names
+----------------------
+
 Inputs always begin with "IN" and outputs always begin with "OUT".  If there is only one of an input or output, that is the entire name.  If there are more than one a single period followed by a single letter or digit is appended.  If the difference between the inputs are meaningless (for example, commutative operations like addition or multiplication), they are "A" and "B" (for example, "IN.A" and "IN.B"). Otherwise a single letter or digit is chosen as best represents the data. (for example, Q for Quotient, R for Remainder, 3 for the 3rd interrupt source, X or the X coordinate)
 
+Description Phrasing
+--------------------
+
+The description can be up to 6 lines, each 33 characters long, with word wrapping.
 
 ### Read (Input)
 
    * READ A VALUE FROM IN
-   * READ A COLOR VALUE FROM IN
-   * READ A HEIGHT VALUE FROM IN
-   * READ A LENGTH VALUE FROM IN
-   * READ A WIDTH VALUE FROM IN
+   * READ A _COLOR_ VALUE FROM IN
+       * also HEIGHT, LENGTH, WIDTH
    * READ INDEX VALUES FROM IN
    * READ AN X VALUE FROM IN
    * READ A Y VALUE FROM IN
@@ -32,15 +37,10 @@ Inputs always begin with "IN" and outputs always begin with "OUT".  If there is 
    * WRITE IN.A WHEN IN.S = 1
    * WRITE INDEXED VALUE TO OUT
    * WRITE THE GREATER VALUE TO OUT
-   * WRITE THE INPUT NUMBER WHEN THE VALUE GOES FROM 0 TO 1
-   * WRITE THE LENGTH TO OUT
    * WRITE THE MAX VALUE TO OUT
-   * WRITE THE PRODUCT TO OUT
-   * WRITE THE QUOTIENT TO OUT
-   * WRITE THE REMAINDER TO OUT
-   * WRITE THE SEQUENCE TO OUT
-   * WRITE THE SUM TO OUT
-   * WRITE THE VALUE TO OUT
+   * WRITE THE INPUT NUMBER WHEN THE VALUE GOES FROM 0 TO 1
+   * WRITE THE _LENGTH_ TO OUT
+       * also PRODUCT, QUOTIENT, REMAINDER, SEQUENCE, SUM, and VALUE
    * WRITE THE SUM OF THE LAST 3 VALUES TO OUT.3 AND THE SUM OF THE LAST 5 VALUES TO OUT.5
    * IF NOT TRUE, WRITE 0 INSTEAD
    * WHEN A 1 IS NOT WRITTEN TO AN OUTPUT, WRITE A 0 INSTEAD
@@ -55,7 +55,6 @@ Inputs always begin with "IN" and outputs always begin with "OUT".  If there is 
 ### Read and Write
 
    * READ A VALUE FROM IN.A AND WRITE THE VALUE TO OUT.A
-   * READ A VALUE FROM IN.X AND WRITE THE VALUE TO OUT.X
 
 ### Operations
 

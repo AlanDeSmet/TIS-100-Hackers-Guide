@@ -13,20 +13,24 @@
 
 <p>When writing <a href="lua.html">puzzles in Lua</a>, you may wich to mirror the style used by the official levels.</p>
 
+<h2>Input and Output Names</h2>
+
 <p>Inputs always begin with "IN" and outputs always begin with "OUT".  If there is only one of an input or output, that is the entire name.  If there are more than one a single period followed by a single letter or digit is appended.  If the difference between the inputs are meaningless (for example, commutative operations like addition or multiplication), they are "A" and "B" (for example, "IN.A" and "IN.B"). Otherwise a single letter or digit is chosen as best represents the data. (for example, Q for Quotient, R for Remainder, 3 for the 3rd interrupt source, X or the X coordinate)</p>
+
+<h2>Description Phrasing</h2>
+
+<p>The description can be up to 6 lines, each 33 characters long, with word wrapping.</p>
 
 <h3>Read (Input)</h3>
 
 <ul>
 <li>READ A VALUE FROM IN
 </li>
-<li>READ A COLOR VALUE FROM IN
+<li>READ A <em>COLOR</em> VALUE FROM IN
+<ul>
+<li>also HEIGHT, LENGTH, WIDTH
 </li>
-<li>READ A HEIGHT VALUE FROM IN
-</li>
-<li>READ A LENGTH VALUE FROM IN
-</li>
-<li>READ A WIDTH VALUE FROM IN
+</ul>
 </li>
 <li>READ INDEX VALUES FROM IN
 </li>
@@ -65,23 +69,15 @@
 </li>
 <li>WRITE THE GREATER VALUE TO OUT
 </li>
-<li>WRITE THE INPUT NUMBER WHEN THE VALUE GOES FROM 0 TO 1
-</li>
-<li>WRITE THE LENGTH TO OUT
-</li>
 <li>WRITE THE MAX VALUE TO OUT
 </li>
-<li>WRITE THE PRODUCT TO OUT
+<li>WRITE THE INPUT NUMBER WHEN THE VALUE GOES FROM 0 TO 1
 </li>
-<li>WRITE THE QUOTIENT TO OUT
+<li>WRITE THE <em>LENGTH</em> TO OUT
+<ul>
+<li>also PRODUCT, QUOTIENT, REMAINDER, SEQUENCE, SUM, and VALUE
 </li>
-<li>WRITE THE REMAINDER TO OUT
-</li>
-<li>WRITE THE SEQUENCE TO OUT
-</li>
-<li>WRITE THE SUM TO OUT
-</li>
-<li>WRITE THE VALUE TO OUT
+</ul>
 </li>
 <li>WRITE THE SUM OF THE LAST 3 VALUES TO OUT.3 AND THE SUM OF THE LAST 5 VALUES TO OUT.5
 </li>
@@ -108,8 +104,6 @@
 
 <ul>
 <li>READ A VALUE FROM IN.A AND WRITE THE VALUE TO OUT.A
-</li>
-<li>READ A VALUE FROM IN.X AND WRITE THE VALUE TO OUT.X
 </li>
 </ul>
 
