@@ -1,7 +1,7 @@
 Lua Style
 ==========
 
-When writing [puzzles in Lua](lua.html), you may wich to mirror the style used by the official levels.
+When writing [puzzles in Lua](lua.html), you may wish to mirror the style used by the official levels.
 
 Input and Output Names
 ----------------------
