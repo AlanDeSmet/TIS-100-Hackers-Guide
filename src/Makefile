@@ -1,4 +1,10 @@
-all: ../index.html ../lua.html ../assembly.html ../save.html ../random.html ../lua-style.html ../display.html
+SRCS=$(wildcard *.markdown)
+DSTS=$(patsubst %.markdown,../%.html,$(SRCS))
+
+all: $(DSTS)
+
+clean:
+	rm -f $(DSTS)
 
 ../%.html: %.markdown make-html
 	./make-html $< > $@
