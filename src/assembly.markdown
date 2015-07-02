@@ -162,3 +162,9 @@ If the ACC is greater than 0, transfer execution to the first instruction after 
 
 Transfer execution to the offset specified by _source_.  Offset is measured in instructions. Negative offsets can be used to move jump backward, positive offsets to jump forward, or 0 to execute the JRO instruction again.
 
+
+### HCF - Reboot
+
+**Syntax:** `HCF`
+
+Causes the game to restart. [Halt and Catch Fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire).  As execution of this instruction terminates the active run, it cannot be used in a puzzle solution.
