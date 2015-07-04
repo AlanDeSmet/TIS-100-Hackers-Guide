@@ -25,8 +25,9 @@
 
 <p><code>get_name()</code> is evaluated only once upon load, no later than upon entering the <code>SPECIFICATION EDITOR</code>.  It will not be re-evaluated on re-entering the <code>SPECIFICATION EDITOR</code>, nor upon entering the program editor. </p>
 
-<p>Returns a single string used as the puzzle's title.  If the name is longer than 33 characters, it will not display correctly on the program editing screen.
-The name will be forced into upper case before displaying if it isn't already.</p>
+<p>Returns a single string used as the puzzle's title.  If the name is longer than 33 characters, it will not display correctly on the program editing screen.</p>
+
+<p>The name is <em>not</em> forced to upper case (as of July 4, 2015); to match TIS-100 style it should be all upper case.</p>
 
 <pre><code>function get_name()
     return "EXAMPLE PUZZLE"
