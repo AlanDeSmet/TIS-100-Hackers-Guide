@@ -19,7 +19,8 @@ Global variables do persist between function calls.  Global variables are discar
 `get_name()` is evaluated only once upon load, no later than upon entering the `SPECIFICATION EDITOR`.  It will not be re-evaluated on re-entering the `SPECIFICATION EDITOR`, nor upon entering the program editor. 
 
 Returns a single string used as the puzzle's title.  If the name is longer than 33 characters, it will not display correctly on the program editing screen.
-The name will be forced into upper case before displaying if it isn't already.
+
+The name is _not_ forced to upper case (as of July 4, 2015); to match TIS-100 style it should be all upper case.
 
 
 	function get_name()
