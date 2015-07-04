@@ -26,6 +26,28 @@
 
 <p>The character # and any characters after it on a line are ignored.  Comments may follow a label or opcode and arguments.</p>
 
+<p>Characters following ## are treated as the program's title and are displayed in the menu.  The ## does not need to be the start of comment.  Spaces one the left and right side of the title are discarded.  If multiple entries with ## are present, TIS-100 searches starting in the upper left node, searching from top to bottom inside of the node's assembly.  If nothing is found, TIS-100 moves from left to right and repeats the search for the assembly in each node.  Upon reaching the right edge, TIS-100 moves to the left of te next row down and repeats the procedure.</p>
+
+<p>Title is "B":</p>
+
+<pre><code># A ## B
+</code></pre>
+
+<p>Title is "#### C ####":</p>
+
+<pre><code>###### C ####
+</code></pre>
+
+<p>Title is "D":</p>
+
+<pre><code>##D
+</code></pre>
+
+<p>Title is "D":</p>
+
+<pre><code>##        D
+</code></pre>
+
 <h2>Labels</h2>
 
 <p>A label, if present, must be the first thing on the line. It is terminated with a : which must be immediately adjacent to the label. Valid characters for labels are the letters A through Z, the digits 0 through 9, and the punctuation in the set of ~`$%^&amp;*()_-+={}[]|\;'"&lt;>,.?/ . There are no limitations on which characters may be in which positions of the label. A line may only have a single label.  A label must have at least one character before the colon. Labels may be up to 18 characters long, but the longest addressable label is 14 characters. </p>

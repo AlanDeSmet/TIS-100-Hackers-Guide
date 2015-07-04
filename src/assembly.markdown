@@ -15,6 +15,27 @@ Comments
 
 The character # and any characters after it on a line are ignored.  Comments may follow a label or opcode and arguments.
 
+Characters following ## are treated as the program's title and are displayed in the menu.  The ## does not need to be the start of comment.  Spaces one the left and right side of the title are discarded.  If multiple entries with ## are present, TIS-100 searches starting in the upper left node, searching from top to bottom inside of the node's assembly.  If nothing is found, TIS-100 moves from left to right and repeats the search for the assembly in each node.  Upon reaching the right edge, TIS-100 moves to the left of te next row down and repeats the procedure.
+
+Title is "B":
+
+    # A ## B
+
+Title is "#### C ####":
+
+    ###### C ####
+
+Title is "D":
+
+    ##D
+
+Title is "D":
+
+    ##        D
+
+
+
+
 
 
 Labels
