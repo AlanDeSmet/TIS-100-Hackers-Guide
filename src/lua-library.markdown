@@ -61,6 +61,75 @@ Functions
 
    * **`unpack(list [, i [, j]]))`** - _Moon_ Alias for `table.unpack`.
 
+
+math
+----
+
+The math library
+
+   * **`math.abc`** - 
+
+   * **`math.acos`** - 
+
+   * **`math.asin`** - 
+
+   * **`math.atan`** - 
+
+   * **`math.atan2`** - 
+
+   * **`math.ceil`** - 
+
+   * **`math.cos`** - 
+
+   * **`math.cosh`** - 
+
+   * **`math.deg`** - 
+
+   * **`math.exp`** - 
+
+   * **`math.floor`** - 
+
+   * **`math.fmod`** - 
+
+   * **`math.frexp`** - 
+
+   * **`math.ldexp`** - 
+
+   * **`math.log`** - 
+
+   * **`math.max`** - 
+
+   * **`math.min`** - 
+
+   * **`math.modf`** - 
+
+   * **`math.pow`** - 
+
+   * **`math.rad`** - 
+
+   * **`math.random`** - 
+
+   * **`math.randomseed`** - 
+
+   * **`math.sin`** - 
+
+   * **`math.sinh`** - 
+
+   * **`math.sqrt`** - 
+
+   * **`math.tan`** - 
+
+   * **`math.tanh`** - 
+
+   * **`math.pi`** 3.14159265358979 
+
+   * **`math.huge`** 1.79769313486232E+308 **TODO** Is this infinity?
+
+
+
+
+
+
 Other
 -----
 
@@ -69,8 +138,6 @@ Other
    * **`bit32`** -        TABLE
 
    * **`input`** -        TABLE _TIS?_
-
-   * **`math`** -         TABLE
 
    * **`_MOONSHARP`** -   TABLE
 
