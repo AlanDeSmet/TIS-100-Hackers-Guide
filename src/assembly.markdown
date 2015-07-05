@@ -5,6 +5,12 @@ See Also
 --------
    * [Graphics Display](display.html) - How the "visualization module" functions.
 
+Speed
+-----
+
+_These are preliminary results._ The TIS-100 runs at 50 Hz in RUN mode, 5,000 Hz in FAST mode, and 25 Hz when STEP is held down.  Most assembly instructions run in a single cycle; `MOV` takes two cycles under some circumstances.
+
+
 Overall Node Behavior
 ---------------------
 
