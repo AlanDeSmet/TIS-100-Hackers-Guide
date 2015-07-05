@@ -29,11 +29,11 @@ Lua puzzles should probably not rely on specific values for the `STREAM_` and `T
 Functions
 ---------
 
-   * **`assert(v [, message])`** - _Base_ If `v` is false, exits with message `message` or "assertion failed!" if no `message` is specified. Otherwise returns all arguments. _Likely of dubious use in puzzle Lua._ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-assert). **TODO** What does this do in practice?
+   * **`assert(v [, message])`** - _Base_ As of July 5, 2015, if `v` is false, causes compilation to fail with a "The script took too long to finish executing and was aborted" error.  Otherwise does nothing.  _Likely of dubious use in puzzle Lua._ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-assert).  (In theory: If `v` is false, exits with message `message` or "assertion failed!" if no `message` is specified. Otherwise returns all arguments. )
 
    * **`collectgarbage([opt [, arg]])`** - _Base_ Interface for managing garbage collection. _Likely of dubious use in puzzle Lua._ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-collectgarbage). **TODO** What does this do in practice?
 
-   * **`error(message [, level])`** -  _Base_ Throws an error. _Likely of dubious use in puzzle Lua._ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-error). **TODO** What does this do in practice?
+   * **`error(message [, level])`** -  _Base_ As of July 5, 2015, causes compilation to fail with a "The script took too long to finish executing and was aborted" error.  _Likely of dubious use in puzzle Lua._ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-error). (In theory: throws an error.)
 
    * **`ipairs(t)`** - _Base_ Iterates over the table `t` as though it was an array, returning the keys 1, 2,... and their matching values until the next integer key is missing. [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-ipairs). Example:
 
