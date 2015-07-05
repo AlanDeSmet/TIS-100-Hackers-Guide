@@ -150,10 +150,10 @@ Other
 
    * **`package.loaded`** - `package` only contains `loaded`
 
-     *  **`string`** TABLE
-     *  **`table`** TABLE
-     *  **`math`** TABLE
-     *  **`bit32`** TABLE
+     *  **`string`** - Alias for `string`
+     *  **`table`** - Alias for `table`
+     *  **`math`** - Alias for `math`
+     *  **`bit32`** - Alias for `bit32`
 
    * **`string`** -       TABLE
 
