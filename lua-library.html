@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>Lua Library - TIS-100 Hacker's Guide</title>
+<meta content='True' name='HandheldFriendly' />  
+<meta content='width=device-width; initial-scale=1.0;' name='viewport' />  
+<meta name="viewport" content="width=device-width" />
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic|Michroma|Roboto+Condensed|Roboto+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="index.css" type="text/css">
+</head>
+<body>
+
+<h1 class="sitetitle"> <a class="sitetitle" href="index.html">TIS-100 Hacker's Guide</a><br> </h1>
+<h1> Lua Library </h1>
+
+<p>These are the functions and variables exposed to the <a href="lua.html">Lua puzzle programs</a></p>
+
+<ul>
+<li><em>Base</em> are part of the base Lua release
+</li>
+<li><em>Moon</em> are new to MoonSharp
+</li>
+<li><em>TIS</em> are new to TIS-100
+</li>
+</ul>
+
+<h2>Constants</h2>
+
+<p>Lua puzzles should probably not rely on specific values for the <code>STREAM_</code> and <code>TILE_</code> constants.</p>
+
+<ul>
+<li><p><code>STREAM_INPUT</code>  = 2000. <em>TIS</em></p></li>
+<li><p><code>STREAM_OUTPUT</code> = 2001. <em>TIS</em></p></li>
+<li><p><code>STREAM_IMAGE</code>  = 2002. <em>TIS</em></p></li>
+<li><p><code>TILE_COMPUTE</code>  = 1000. <em>TIS</em></p></li>
+<li><p><code>TILE_MEMORY</code>   = 1001. <em>TIS</em></p></li>
+<li><p><code>TILE_DAMAGED</code>  = 1002. <em>TIS</em></p></li>
+<li><p><code>_VERSION</code>      = "MoonSharp 0.9.5.0". <em>Moon</em></p></li>
+</ul>
+
+<h2>Functions</h2>
+
+<ul>
+<li><p><code>assert(v [, message])</code> - <em>Base</em> If <code>v</code> is false, exits with message <code>message</code> or "assertion failed!" if no <code>message</code> is specified. Otherwise returns all arguments. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-assert">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
+<li><p><code>collectgarbage([opt [, arg]])</code> - <em>Base</em> Interface for managing garbage collection. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-collectgarbage">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
+<li><p><code>error(message [, level])</code> -  <em>Base</em> Throws an error. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-error">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
+<li><p><code>get_description</code> - FUNCTION <em>TIS</em></p></li>
+<li><p><code>get_layout</code> -   FUNCTION <em>TIS</em></p></li>
+<li><p><code>get_name</code> -     FUNCTION <em>TIS</em></p></li>
+<li><p><code>get_streams</code> -  FUNCTION <em>TIS</em></p></li>
+<li><p><code>ipairs(t)</code> - <em>Base</em> Iterates over the table <code>t</code> as though it was an array, returning the keys 1, 2,... and their matching values until the next integer key is missing. <a href="http://www.lua.org/manual/5.2/manual.html#pdf-ipairs">Lua documentation</a>. Example:</p>
+
+<pre><code>local input = { 1, 2, 3, 4, 5 }
+local output = {}
+for i,v in ipairs(input) do
+    output[i] = input[i] * 2
+end
+</code></pre></li>
+<li><p><code>next(table [, index])</code> - <em>Base</em> Returns the next index and value from the <code>table</code>. If <code>index</code> is nil, returns the first index and value. Items in the table may be returned in any order.  Adding a new index to the table may cause existing indices to be invalid.  In most cases <code>pairs()</code> or <code>ipairs()</code> will be simpler.  <a href="http://www.lua.org/manual/5.2/manual.html#pdf-next">Lua documentation</a></p></li>
+<li><p><code>pack</code> -         FUNCTION <em>Moon?</em></p></li>
+<li><p><code>pairs(t)</code> - <em>Base</em> Iterates over all index value pairs in table <code>t</code>.  If the table is being used as an array with integer indices, <code>ipairs()</code> may be a better solution.  <a href="http://www.lua.org/manual/5.2/manual.html#pdf-pairs">Lua documentation</a></p></li>
+<li><p><code>print(...)</code> - <em>Base</em> Prints one or more values separated with tabs and terminated with a newline. <em>Likely of dubious value in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-print">Lua documentation</a></p></li>
+<li><p><code>select</code> -       FUNCTION</p></li>
+<li><p><code>tonumber</code> -     FUNCTION</p></li>
+<li><p><code>tostring</code> -     FUNCTION</p></li>
+<li><p><code>type</code> -         FUNCTION</p></li>
+<li><p><code>unpack</code> -       FUNCTION</p></li>
+</ul>
+
+<h2>Other</h2>
+
+<ul>
+<li><p><code>_G</code> - <em>Base Lua.</em> A table containing all of these variables, tables, and functions, including <code>_G</code> itself.</p></li>
+<li><p><code>bit32</code> -        TABLE</p></li>
+<li><code>input</code> -        TABLE <em>TIS?</em>
+</li>
+<li><code>math</code> -         TABLE
+</li>
+<li><code>_MOONSHARP</code> -   TABLE
+</li>
+<li><code>output</code> -       TABLE <em>TIS?</em>
+</li>
+<li><code>package</code> -      TABLE
+</li>
+<li><code>string</code> -       TABLE
+</li>
+<li><code>table</code> -        TABLE
+</li>
+</ul>
+
+<p>The following functions are present in standard Lua, but are not available in TIS-100:</p>
+
+<ul>
+<li><code>coroutine</code>
+</li>
+<li><code>debug</code>
+</li>
+<li><code>dofile</code>
+</li>
+<li><code>load</code>
+</li>
+<li><code>loadfile</code>
+</li>
+<li><code>loadstring</code>
+</li>
+<li><code>module</code>
+</li>
+<li><code>os</code>
+</li>
+<li><code>pcall</code>
+</li>
+<li><code>rawequal</code>
+</li>
+<li><code>rawget</code>
+</li>
+<li><code>rawlen</code>
+</li>
+<li><code>rawset</code>
+</li>
+<li><code>require</code>
+</li>
+<li><code>setmetatable</code>
+</li>
+<li><code>xpcall</code>
+</li>
+</ul>
+
+
+<div class="copyright">
+<p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="float:right" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+<span class="copyrightlabel">Copyright</span>
+Copyright 2015 Alan De Smet.
+This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a href="https://github.com/AlanDeSmet/TIS-100-Hackers-Guide/tree/gh-pages">Fork this on GitHub!</a></p>
+</div>
+
+</body>
+</html>
