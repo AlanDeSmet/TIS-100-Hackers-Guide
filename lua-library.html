@@ -27,26 +27,26 @@
 <p>Lua puzzles should probably not rely on specific values for the <code>STREAM_</code> and <code>TILE_</code> constants.</p>
 
 <ul>
-<li><p><code>STREAM_INPUT</code>  = 2000. <em>TIS</em></p></li>
-<li><p><code>STREAM_OUTPUT</code> = 2001. <em>TIS</em></p></li>
-<li><p><code>STREAM_IMAGE</code>  = 2002. <em>TIS</em></p></li>
-<li><p><code>TILE_COMPUTE</code>  = 1000. <em>TIS</em></p></li>
-<li><p><code>TILE_MEMORY</code>   = 1001. <em>TIS</em></p></li>
-<li><p><code>TILE_DAMAGED</code>  = 1002. <em>TIS</em></p></li>
-<li><p><code>_VERSION</code>      = "MoonSharp 0.9.5.0". <em>Moon</em></p></li>
+<li><p><strong><code>STREAM_INPUT</code></strong>  = 2000. <em>TIS</em></p></li>
+<li><p><strong><code>STREAM_OUTPUT</code></strong> = 2001. <em>TIS</em></p></li>
+<li><p><strong><code>STREAM_IMAGE</code></strong>  = 2002. <em>TIS</em></p></li>
+<li><p><strong><code>TILE_COMPUTE</code></strong>  = 1000. <em>TIS</em></p></li>
+<li><p><strong><code>TILE_MEMORY</code></strong>   = 1001. <em>TIS</em></p></li>
+<li><p><strong><code>TILE_DAMAGED</code></strong>  = 1002. <em>TIS</em></p></li>
+<li><p><strong><code>_VERSION</code></strong>      = "MoonSharp 0.9.5.0". <em>Moon</em></p></li>
 </ul>
 
 <h2>Functions</h2>
 
 <ul>
-<li><p><code>assert(v [, message])</code> - <em>Base</em> If <code>v</code> is false, exits with message <code>message</code> or "assertion failed!" if no <code>message</code> is specified. Otherwise returns all arguments. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-assert">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
-<li><p><code>collectgarbage([opt [, arg]])</code> - <em>Base</em> Interface for managing garbage collection. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-collectgarbage">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
-<li><p><code>error(message [, level])</code> -  <em>Base</em> Throws an error. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-error">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
-<li><p><code>get_description</code> - FUNCTION <em>TIS</em></p></li>
-<li><p><code>get_layout</code> -   FUNCTION <em>TIS</em></p></li>
-<li><p><code>get_name</code> -     FUNCTION <em>TIS</em></p></li>
-<li><p><code>get_streams</code> -  FUNCTION <em>TIS</em></p></li>
-<li><p><code>ipairs(t)</code> - <em>Base</em> Iterates over the table <code>t</code> as though it was an array, returning the keys 1, 2,... and their matching values until the next integer key is missing. <a href="http://www.lua.org/manual/5.2/manual.html#pdf-ipairs">Lua documentation</a>. Example:</p>
+<li><p><strong><code>assert(v [, message])</code></strong> - <em>Base</em> If <code>v</code> is false, exits with message <code>message</code> or "assertion failed!" if no <code>message</code> is specified. Otherwise returns all arguments. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-assert">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
+<li><p><strong><code>collectgarbage([opt [, arg]])</code></strong> - <em>Base</em> Interface for managing garbage collection. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-collectgarbage">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
+<li><p><strong><code>error(message [, level])</code></strong> -  <em>Base</em> Throws an error. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-error">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
+<li><p><strong><code>get_description</code></strong> - FUNCTION <em>TIS</em></p></li>
+<li><p><strong><code>get_layout</code></strong> -   FUNCTION <em>TIS</em></p></li>
+<li><p><strong><code>get_name</code></strong> -     FUNCTION <em>TIS</em></p></li>
+<li><p><strong><code>get_streams</code></strong> -  FUNCTION <em>TIS</em></p></li>
+<li><p><strong><code>ipairs(t)</code></strong> - <em>Base</em> Iterates over the table <code>t</code> as though it was an array, returning the keys 1, 2,... and their matching values until the next integer key is missing. <a href="http://www.lua.org/manual/5.2/manual.html#pdf-ipairs">Lua documentation</a>. Example:</p>
 
 <pre><code>local input = { 1, 2, 3, 4, 5 }
 local output = {}
@@ -54,39 +54,34 @@ for i,v in ipairs(input) do
     output[i] = input[i] * 2
 end
 </code></pre></li>
-<li><p><code>next(table [, index])</code> - <em>Base</em> Returns the next index and value from the <code>table</code>. If <code>index</code> is nil, returns the first index and value. Items in the table may be returned in any order.  Adding a new index to the table may cause existing indices to be invalid.  In most cases <code>pairs()</code> or <code>ipairs()</code> will be simpler.  <a href="http://www.lua.org/manual/5.2/manual.html#pdf-next">Lua documentation</a></p></li>
-<li><p><code>pack</code> -         FUNCTION <em>Moon?</em></p></li>
-<li><p><code>pairs(t)</code> - <em>Base</em> Iterates over all index value pairs in table <code>t</code>.  If the table is being used as an array with integer indices, <code>ipairs()</code> may be a better solution.  <a href="http://www.lua.org/manual/5.2/manual.html#pdf-pairs">Lua documentation</a></p></li>
-<li><p><code>print(...)</code> - <em>Base</em> Prints one or more values separated with tabs and terminated with a newline. <em>Likely of dubious value in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-print">Lua documentation</a></p></li>
-<li><p><code>select</code> -       FUNCTION</p></li>
-<li><p><code>tonumber</code> -     FUNCTION</p></li>
-<li><p><code>tostring</code> -     FUNCTION</p></li>
-<li><p><code>type</code> -         FUNCTION</p></li>
-<li><p><code>unpack</code> -       FUNCTION</p></li>
+<li><p><strong><code>next(table [, index])</code></strong> - <em>Base</em> Returns the next index and value from the <code>table</code>. If <code>index</code> is nil, returns the first index and value. Items in the table may be returned in any order.  Adding a new index to the table may cause existing indices to be invalid.  In most cases <code>pairs()</code> or <code>ipairs()</code> will be simpler.  <a href="http://www.lua.org/manual/5.2/manual.html#pdf-next">Lua documentation</a></p></li>
+<li><p><strong><code>pack(...)</code></strong> - <em>Moon</em> Synonym for <code>table.pack</code>.</p></li>
+<li><p><strong><code>pairs(t)</code></strong> - <em>Base</em> Iterates over all index value pairs in table <code>t</code>.  If the table is being used as an array with integer indices, <code>ipairs()</code> may be a better solution.  <a href="http://www.lua.org/manual/5.2/manual.html#pdf-pairs">Lua documentation</a></p></li>
+<li><p><strong><code>print(...)</code></strong> - <em>Base</em> Prints one or more values separated with tabs and terminated with a newline. <em>Likely of dubious value in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-print">Lua documentation</a></p></li>
+<li><p><strong><code>select(index, ...)</code></strong> - <em>Base</em> If <code>index</code> is a integer value greater or equal to 1, returns remaining arguments from that point forward. <a href="http://www.lua.org/manual/5.2/manual.html#pdf-select">Lua documentation</a></p></li>
+<li><p><strong><code>tonumber(e [, base])</code></strong> - <em>Base</em> Return <code>e</code> as a number. If <code>base</code> is specified, <code>e</code> is interpreted as being in that base. Return nil is e cannot be parsed. <a href="http://www.lua.org/manual/5.2/manual.html#pdf-tonumber">Lua documentation</a></p></li>
+<li><p><strong><code>tostring(v)</code></strong> - <em>Base</em> Return <code>v</code> as a string. Numbers are converted to a string representation. Functions and tables return "function: <em>address</em>" and "table: <em>address</em>" respectively. <a href="http://www.lua.org/manual/5.2/manual.html#pdf-tostring">Lua documentation</a></p></li>
+<li><p><strong><code>type(v)</code></strong> - <em>Base</em> Returns a string describing the type of <code>v</code>.  Responses include "string", "number", "boolean", "nil", "table", and "function".   May return "userdata" or "thread" in some cases.  <a href="http://www.lua.org/manual/5.2/manual.html#pdf-type">Lua documentation</a></p></li>
+<li><p><strong><code>unpack(list [, i [, j]]))</code></strong> - <em>Moon</em> Synonym for <code>table.unpack</code>.</p></li>
 </ul>
 
 <h2>Other</h2>
 
 <ul>
-<li><p><code>_G</code> - <em>Base Lua.</em> A table containing all of these variables, tables, and functions, including <code>_G</code> itself.</p></li>
-<li><p><code>bit32</code> -        TABLE</p></li>
-<li><code>input</code> -        TABLE <em>TIS?</em>
-</li>
-<li><code>math</code> -         TABLE
-</li>
-<li><code>_MOONSHARP</code> -   TABLE
-</li>
-<li><code>output</code> -       TABLE <em>TIS?</em>
-</li>
-<li><code>package</code> -      TABLE
-</li>
-<li><code>string</code> -       TABLE
-</li>
-<li><code>table</code> -        TABLE
-</li>
+<li><p><strong><code>_G</code></strong> - <em>Base Lua.</em> A table containing all of these variables, tables, and functions, including <code>_G</code> itself.</p></li>
+<li><p><strong><code>bit32</code></strong> -        TABLE</p></li>
+<li><p><strong><code>input</code></strong> -        TABLE <em>TIS?</em></p></li>
+<li><p><strong><code>math</code></strong> -         TABLE</p></li>
+<li><p><strong><code>_MOONSHARP</code></strong> -   TABLE</p></li>
+<li><p><strong><code>output</code></strong> -       TABLE <em>TIS?</em></p></li>
+<li><p><strong><code>package</code></strong> -      TABLE</p></li>
+<li><p><strong><code>string</code></strong> -       TABLE</p></li>
+<li><p><strong><code>table</code></strong> -        TABLE</p></li>
 </ul>
 
-<p>The following functions are present in standard Lua, but are not available in TIS-100:</p>
+<h2>Not Available</h2>
+
+<p>These functions are present in standard Lua, but are not available in TIS-100. </p>
 
 <ul>
 <li><code>coroutine</code>
