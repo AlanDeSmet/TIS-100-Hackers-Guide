@@ -103,17 +103,26 @@ end
 <li><p><strong><code>_G</code></strong> - <em>Base Lua.</em> A table containing all of these variables, tables, and functions, including <code>_G</code> itself.</p></li>
 <li><p><strong><code>bit32</code></strong> -        TABLE</p></li>
 <li><p><strong><code>input</code></strong> -        TABLE <em>TIS?</em></p></li>
-<li><p><strong><code>_MOONSHARP</code></strong> -   TABLE</p>
+<li><p><strong><code>_MOONSHARP</code></strong> -   Information about the MoonSharp implementation.  It is recommended that Lua puzzles do not interact with these variables.  The below values are from the Linux version of TIS-100 and may vary on other platforms.</p>
 
-<pre><code>* version = "0.9.5.0"
-* luacompat = "5.2"
-* platform = "limited.unity.mono.clr2"
-* is_aot = false
-* is_unity = true
-* is_mono = true
-* is_clr4 = false
-* is_pcl = false
-</code></pre></li>
+<ul>
+<li><strong><code>is_aot</code></strong> = false
+</li>
+<li><strong><code>is_clr4</code></strong> = false
+</li>
+<li><strong><code>is_mono</code></strong> = true
+</li>
+<li><strong><code>is_pcl</code></strong> = false
+</li>
+<li><strong><code>is_unity</code></strong> = true
+</li>
+<li><strong><code>luacompat</code></strong> = "5.2"
+</li>
+<li><strong><code>platform</code></strong> = "limited.unity.mono.clr2"
+</li>
+<li><strong><code>version</code></strong> = "0.9.5.0"
+</li>
+</ul></li>
 <li><p><strong><code>output</code></strong> -       TABLE <em>TIS?</em></p></li>
 <li><p><strong><code>package</code></strong> -      TABLE</p></li>
 <li><p><strong><code>string</code></strong> -       TABLE</p></li>

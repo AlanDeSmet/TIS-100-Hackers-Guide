@@ -139,16 +139,16 @@ Other
 
    * **`input`** -        TABLE _TIS?_
 
-   * **`_MOONSHARP`** -   TABLE
+   * **`_MOONSHARP`** -   Information about the MoonSharp implementation.  It is recommended that Lua puzzles do not interact with these variables.  The below values are from the Linux version of TIS-100 and may vary on other platforms.
 
-   		* version = "0.9.5.0"
-		* luacompat = "5.2"
-		* platform = "limited.unity.mono.clr2"
-		* is_aot = false
-		* is_unity = true
-		* is_mono = true
-		* is_clr4 = false
-		* is_pcl = false
+     * **`is_aot`** = false
+     * **`is_clr4`** = false
+     * **`is_mono`** = true
+     * **`is_pcl`** = false
+     * **`is_unity`** = true
+     * **`luacompat`** = "5.2"
+     * **`platform`** = "limited.unity.mono.clr2"
+     * **`version`** = "0.9.5.0"
 
 
    * **`output`** -       TABLE _TIS?_
