@@ -42,10 +42,6 @@
 <li><p><strong><code>assert(v [, message])</code></strong> - <em>Base</em> If <code>v</code> is false, exits with message <code>message</code> or "assertion failed!" if no <code>message</code> is specified. Otherwise returns all arguments. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-assert">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
 <li><p><strong><code>collectgarbage([opt [, arg]])</code></strong> - <em>Base</em> Interface for managing garbage collection. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-collectgarbage">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
 <li><p><strong><code>error(message [, level])</code></strong> -  <em>Base</em> Throws an error. <em>Likely of dubious use in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-error">Lua documentation</a>. <strong>TODO</strong> What does this do in practice?</p></li>
-<li><p><strong><code>get_description</code></strong> - FUNCTION <em>TIS</em></p></li>
-<li><p><strong><code>get_layout</code></strong> -   FUNCTION <em>TIS</em></p></li>
-<li><p><strong><code>get_name</code></strong> -     FUNCTION <em>TIS</em></p></li>
-<li><p><strong><code>get_streams</code></strong> -  FUNCTION <em>TIS</em></p></li>
 <li><p><strong><code>ipairs(t)</code></strong> - <em>Base</em> Iterates over the table <code>t</code> as though it was an array, returning the keys 1, 2,... and their matching values until the next integer key is missing. <a href="http://www.lua.org/manual/5.2/manual.html#pdf-ipairs">Lua documentation</a>. Example:</p>
 
 <pre><code>local input = { 1, 2, 3, 4, 5 }

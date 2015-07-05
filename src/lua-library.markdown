@@ -35,14 +35,6 @@ Functions
 
    * **`error(message [, level])`** -  _Base_ Throws an error. _Likely of dubious use in puzzle Lua._ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-error). **TODO** What does this do in practice?
 
-   * **`get_description`** - FUNCTION _TIS_
-
-   * **`get_layout`** -   FUNCTION _TIS_
-
-   * **`get_name`** -     FUNCTION _TIS_
-
-   * **`get_streams`** -  FUNCTION _TIS_
-
    * **`ipairs(t)`** - _Base_ Iterates over the table `t` as though it was an array, returning the keys 1, 2,... and their matching values until the next integer key is missing. [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-ipairs). Example:
 
 		local input = { 1, 2, 3, 4, 5 }
