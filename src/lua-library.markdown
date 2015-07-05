@@ -45,7 +45,7 @@ Functions
 
    * **`next(table [, index])`** - _Base_ Returns the next index and value from the `table`. If `index` is nil, returns the first index and value. Items in the table may be returned in any order.  Adding a new index to the table may cause existing indices to be invalid.  In most cases `pairs()` or `ipairs()` will be simpler.  [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-next)
 
-   * **`pack(...)`** - _Moon_ Synonym for `table.pack`.
+   * **`pack(...)`** - _Moon_ Alias for `table.pack`.
 
    * **`pairs(t)`** - _Base_ Iterates over all index value pairs in table `t`.  If the table is being used as an array with integer indices, `ipairs()` may be a better solution.  [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-pairs)
 
@@ -59,7 +59,7 @@ Functions
 
    * **`type(v)`** - _Base_ Returns a string describing the type of `v`.  Responses include "string", "number", "boolean", "nil", "table", and "function".   May return "userdata" or "thread" in some cases.  [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-type)
 
-   * **`unpack(list [, i [, j]]))`** - _Moon_ Synonym for `table.unpack`.
+   * **`unpack(list [, i [, j]]))`** - _Moon_ Alias for `table.unpack`.
 
 Other
 -----

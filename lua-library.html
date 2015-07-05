@@ -51,14 +51,14 @@ for i,v in ipairs(input) do
 end
 </code></pre></li>
 <li><p><strong><code>next(table [, index])</code></strong> - <em>Base</em> Returns the next index and value from the <code>table</code>. If <code>index</code> is nil, returns the first index and value. Items in the table may be returned in any order.  Adding a new index to the table may cause existing indices to be invalid.  In most cases <code>pairs()</code> or <code>ipairs()</code> will be simpler.  <a href="http://www.lua.org/manual/5.2/manual.html#pdf-next">Lua documentation</a></p></li>
-<li><p><strong><code>pack(...)</code></strong> - <em>Moon</em> Synonym for <code>table.pack</code>.</p></li>
+<li><p><strong><code>pack(...)</code></strong> - <em>Moon</em> Alias for <code>table.pack</code>.</p></li>
 <li><p><strong><code>pairs(t)</code></strong> - <em>Base</em> Iterates over all index value pairs in table <code>t</code>.  If the table is being used as an array with integer indices, <code>ipairs()</code> may be a better solution.  <a href="http://www.lua.org/manual/5.2/manual.html#pdf-pairs">Lua documentation</a></p></li>
 <li><p><strong><code>print(...)</code></strong> - <em>Base</em> Prints one or more values separated with tabs and terminated with a newline. <em>Likely of dubious value in puzzle Lua.</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-print">Lua documentation</a></p></li>
 <li><p><strong><code>select(index, ...)</code></strong> - <em>Base</em> If <code>index</code> is a integer value greater or equal to 1, returns remaining arguments from that point forward. <a href="http://www.lua.org/manual/5.2/manual.html#pdf-select">Lua documentation</a></p></li>
 <li><p><strong><code>tonumber(e [, base])</code></strong> - <em>Base</em> Return <code>e</code> as a number. If <code>base</code> is specified, <code>e</code> is interpreted as being in that base. Return nil is e cannot be parsed. <a href="http://www.lua.org/manual/5.2/manual.html#pdf-tonumber">Lua documentation</a></p></li>
 <li><p><strong><code>tostring(v)</code></strong> - <em>Base</em> Return <code>v</code> as a string. Numbers are converted to a string representation. Functions and tables return "function: <em>address</em>" and "table: <em>address</em>" respectively. <a href="http://www.lua.org/manual/5.2/manual.html#pdf-tostring">Lua documentation</a></p></li>
 <li><p><strong><code>type(v)</code></strong> - <em>Base</em> Returns a string describing the type of <code>v</code>.  Responses include "string", "number", "boolean", "nil", "table", and "function".   May return "userdata" or "thread" in some cases.  <a href="http://www.lua.org/manual/5.2/manual.html#pdf-type">Lua documentation</a></p></li>
-<li><p><strong><code>unpack(list [, i [, j]]))</code></strong> - <em>Moon</em> Synonym for <code>table.unpack</code>.</p></li>
+<li><p><strong><code>unpack(list [, i [, j]]))</code></strong> - <em>Moon</em> Alias for <code>table.unpack</code>.</p></li>
 </ul>
 
 <h2>Other</h2>
