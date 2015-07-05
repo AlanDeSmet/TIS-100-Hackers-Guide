@@ -141,6 +141,16 @@ Other
 
    * **`_MOONSHARP`** -   TABLE
 
+   		* version = "0.9.5.0"
+		* luacompat = "5.2"
+		* platform = "limited.unity.mono.clr2"
+		* is_aot = false
+		* is_unity = true
+		* is_mono = true
+		* is_clr4 = false
+		* is_pcl = false
+
+
    * **`output`** -       TABLE _TIS?_
 
    * **`package`** -      TABLE
