@@ -148,7 +148,12 @@ Other
      * **`platform`** = "limited.unity.mono.clr2"
      * **`version`** = "0.9.5.0"
 
-   * **`package`** -      TABLE
+   * **`package.loaded`** - `package` only contains `loaded`
+
+     *  **`string`** TABLE
+     *  **`table`** TABLE
+     *  **`math`** TABLE
+     *  **`bit32`** TABLE
 
    * **`string`** -       TABLE
 
