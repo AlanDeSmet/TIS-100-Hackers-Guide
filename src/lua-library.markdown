@@ -167,9 +167,32 @@ Other
      *  **`math`** - Alias for `math`
      *  **`bit32`** - Alias for `bit32`
 
-   * **`string`** -       TABLE
+   * **`string`**
 
-   * **`table`** -        TABLE
+     * **`dump`**
+     * **`char`**
+     * **`byte`**
+     * **`unicode`**
+     * **`len`**
+     * **`match`**
+     * **`gmatch`**
+     * **`gsub`**
+     * **`find`**
+     * **`lower`**
+     * **`upper`**
+     * **`rep`**
+     * **`format`**
+     * **`reverse`**
+     * **`sub`**
+
+   * **`table`**
+
+     * **`unpack`**
+     * **`pack`**
+     * **`sort`**
+     * **`insert`**
+     * **`remove`**
+     * **`concat`**
 
 Not Available
 -------------
