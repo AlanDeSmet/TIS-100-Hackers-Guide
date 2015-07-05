@@ -137,8 +137,6 @@ Other
 
    * **`bit32`** -        TABLE
 
-   * **`input`** -        TABLE _TIS?_
-
    * **`_MOONSHARP`** -   Information about the MoonSharp implementation.  It is recommended that Lua puzzles do not interact with these variables.  The below values are from the Linux version of TIS-100 and may vary on other platforms.
 
      * **`is_aot`** = false
@@ -149,9 +147,6 @@ Other
      * **`luacompat`** = "5.2"
      * **`platform`** = "limited.unity.mono.clr2"
      * **`version`** = "0.9.5.0"
-
-
-   * **`output`** -       TABLE _TIS?_
 
    * **`package`** -      TABLE
 
