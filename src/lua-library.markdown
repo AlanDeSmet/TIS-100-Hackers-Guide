@@ -136,6 +136,18 @@ Other
    * **`_G`** - _Base Lua._ A table containing all of these variables, tables, and functions, including `_G` itself.
 
    * **`bit32`** -        TABLE
+     * **`extract`**
+     * **`replace`**
+     * **`arshift`**
+     * **`rshift`**
+     * **`lshift`**
+     * **`band`**
+	 * **`btest`**
+	 * **`bor`**
+	 * **`bnot`**
+	 * **`bxor`**
+	 * **`lrotate`**
+	 * **`rrotate`**
 
    * **`_MOONSHARP`** -   Information about the MoonSharp implementation.  It is recommended that Lua puzzles do not interact with these variables.  The below values are from the Linux version of TIS-100 and may vary on other platforms.
 
