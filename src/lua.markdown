@@ -9,7 +9,9 @@ A puzzle must implement the following functions.  None of the functions take arg
 
 Global variables do persist between function calls.  Global variables are discarded when TIS-100 notices and loads an updated version of the puzzle.
 
-[Notes on matching the style used by the official puzzles](lua-style.html).
+[Notes on matching the style used by the official puzzles.](lua-style.html)
+
+[Functions and constants available to puzzle Lua.](lua-library.html)
 
 
 

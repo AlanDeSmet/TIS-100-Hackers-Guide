@@ -5,6 +5,8 @@ The TIS-100 Hacker's Guide is for people intrested in the guts of TIS-100.
 
    * [Puzzle Lua](lua.html) documents how TIS-100 interacts with puzzles written in Lua, for use both by puzzles creators and emulator creators.
 
+       * [Lua Library](lua-library.html) documents the functions and constants available to puzzle Lua.
+
        * [math.random() and math.randomseed()](random.html) documents how TIS-100's versions of those functions behave and can be reproduced.
 
        * [Lua Style](lua-style.html) documents the style used by the official puzzles.

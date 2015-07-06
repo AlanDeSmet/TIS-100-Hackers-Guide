@@ -65,66 +65,39 @@ Functions
 math
 ----
 
-The math library
+The math library.  All functions are 
 
-   * **`math.abc`** - 
+   * **`math.pi`** = 3.14159265358979 _Base_ π
 
-   * **`math.acos`** - 
+   * **`math.huge`** = 1.79769313486232E+308 - _Base_ The largest possible number Lua can represent.
 
-   * **`math.asin`** - 
-
-   * **`math.atan`** - 
-
-   * **`math.atan2`** - 
-
-   * **`math.ceil`** - 
-
-   * **`math.cos`** - 
-
-   * **`math.cosh`** - 
-
-   * **`math.deg`** - 
-
-   * **`math.exp`** - 
-
-   * **`math.floor`** - 
-
-   * **`math.fmod`** - 
-
-   * **`math.frexp`** - 
-
-   * **`math.ldexp`** - 
-
-   * **`math.log`** - 
-
-   * **`math.max`** - 
-
-   * **`math.min`** - 
-
-   * **`math.modf`** - 
-
-   * **`math.pow`** - 
-
-   * **`math.rad`** - 
-
-   * **`math.random`** - 
-
-   * **`math.randomseed`** - 
-
-   * **`math.sin`** - 
-
-   * **`math.sinh`** - 
-
-   * **`math.sqrt`** - 
-
-   * **`math.tan`** - 
-
-   * **`math.tanh`** - 
-
-   * **`math.pi`** 3.14159265358979 
-
-   * **`math.huge`** 1.79769313486232E+308 **TODO** Is this infinity?
-
+   * **`math.abs`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.abs)
+   * **`math.acos`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.acos)
+   * **`math.asin`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.asin)
+   * **`math.atan`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.atan)
+   * **`math.atan2`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.atan2)
+   * **`math.ceil`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.ceil)
+   * **`math.cos`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.cos)
+   * **`math.cosh`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.cosh)
+   * **`math.deg`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.deg)
+   * **`math.exp`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.exp)
+   * **`math.floor`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.floor)
+   * **`math.fmod`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.fmod)
+   * **`math.frexp`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.frexp)
+   * **`math.ldexp`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.ldexp)
+   * **`math.log`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.log)
+   * **`math.max`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.max)
+   * **`math.min`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.min)
+   * **`math.modf`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.modf)
+   * **`math.pow`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.pow)
+   * **`math.rad`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.rad)
+   * **`math.random`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.random)
+   * **`math.randomseed`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.randomseed)
+   * **`math.sin`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.sin)
+   * **`math.sinh`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.sinh)
+   * **`math.sqrt`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.sqrt)
+   * **`math.tan`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.tan)
+   * **`math.tanh`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.tanh)
 
 
 
