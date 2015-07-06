@@ -63,12 +63,15 @@ end
 
 <h2>math</h2>
 
-<p>The math library.  All functions are </p>
+<p>A table containing the math library.  The entire <a href="http://www.lua.org/manual/5.2/manual.html#6.6">standard Lua math library</a> is present.</p>
 
 <ul>
-<li><p><strong><code>math.pi</code></strong> = 3.14159265358979 <em>Base</em> π</p></li>
-<li><p><strong><code>math.huge</code></strong> = 1.79769313486232E+308 - <em>Base</em> The largest possible number Lua can represent.</p></li>
-<li><p><strong><code>math.abs</code></strong> - <em>Base</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-math.abs">Lua documentation</a></p></li>
+<li><strong><code>math.pi</code></strong> = 3.14159265358979 <em>Base</em> π
+</li>
+<li><strong><code>math.huge</code></strong> = 1.79769313486232E+308 - <em>Base</em> The largest possible number Lua can represent.
+</li>
+<li><strong><code>math.abs</code></strong> - <em>Base</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-math.abs">Lua documentation</a>
+</li>
 <li><strong><code>math.acos</code></strong> - <em>Base</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-math.acos">Lua documentation</a>
 </li>
 <li><strong><code>math.asin</code></strong> - <em>Base</em> <a href="http://www.lua.org/manual/5.2/manual.html#pdf-math.asin">Lua documentation</a>
@@ -123,39 +126,41 @@ end
 </li>
 </ul>
 
-<h2>Other</h2>
+<h2>bit32</h2>
+
+<p>A table containing the bit manipulation library. <br />
+????The entire <a href="http://www.lua.org/manual/5.2/manual.html#6.6">standard Lua math library</a> is present.</p>
 
 <ul>
-<li><p><strong><code>_G</code></strong> - <em>Base Lua.</em> A table containing all of these variables, tables, and functions, including <code>_G</code> itself.</p></li>
-<li><p><strong><code>bit32</code></strong> -        TABLE</p>
+<li><strong><code>bit32.extract</code></strong>
+</li>
+<li><strong><code>bit32.replace</code></strong>
+</li>
+<li><strong><code>bit32.arshift</code></strong>
+</li>
+<li><strong><code>bit32.rshift</code></strong>
+</li>
+<li><strong><code>bit32.lshift</code></strong>
+</li>
+<li><strong><code>bit32.band</code></strong>
+</li>
+<li><strong><code>bit32.btest</code></strong>
+</li>
+<li><strong><code>bit32.bor</code></strong>
+</li>
+<li><strong><code>bit32.bnot</code></strong>
+</li>
+<li><strong><code>bit32.bxor</code></strong>
+</li>
+<li><strong><code>bit32.lrotate</code></strong>
+</li>
+<li><strong><code>bit32.rrotate</code></strong>
+</li>
+</ul>
 
-<ul>
-<li><strong><code>extract</code></strong>
-</li>
-<li><strong><code>replace</code></strong>
-</li>
-<li><strong><code>arshift</code></strong>
-</li>
-<li><strong><code>rshift</code></strong>
-</li>
-<li><strong><code>lshift</code></strong>
-</li>
-<li><strong><code>band</code></strong>
-</li>
-<li><strong><code>btest</code></strong>
-</li>
-<li><strong><code>bor</code></strong>
-</li>
-<li><strong><code>bnot</code></strong>
-</li>
-<li><strong><code>bxor</code></strong>
-</li>
-<li><strong><code>lrotate</code></strong>
-</li>
-<li><strong><code>rrotate</code></strong>
-</li>
-</ul></li>
-<li><p><strong><code>_MOONSHARP</code></strong> -   Information about the MoonSharp implementation.  It is recommended that Lua puzzles do not interact with these variables.  The below values are from the Linux version of TIS-100 and may vary on other platforms.</p>
+<h2>_MOONSHARP</h2>
+
+<p>Information about the MoonSharp implementation.  It is recommended that Lua puzzles do not interact with these variables.  The below values are from the Linux version of TIS-100 and may vary on other platforms.</p>
 
 <ul>
 <li><strong><code>is_aot</code></strong> = false
@@ -174,7 +179,12 @@ end
 </li>
 <li><strong><code>version</code></strong> = "0.9.5.0"
 </li>
-</ul></li>
+</ul>
+
+<h2>Other</h2>
+
+<ul>
+<li><p><strong><code>_G</code></strong> - <em>Base Lua.</em> A table containing all of these variables, tables, and functions, including <code>_G</code> itself.</p></li>
 <li><p><strong><code>package.loaded</code></strong> - <code>package</code> only contains <code>loaded</code></p>
 
 <ul>

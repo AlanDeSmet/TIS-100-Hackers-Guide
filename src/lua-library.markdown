@@ -65,12 +65,10 @@ Functions
 math
 ----
 
-The math library.  All functions are 
+A table containing the math library.  The entire [standard Lua math library](http://www.lua.org/manual/5.2/manual.html#6.6) is present.
 
    * **`math.pi`** = 3.14159265358979 _Base_ π
-
    * **`math.huge`** = 1.79769313486232E+308 - _Base_ The largest possible number Lua can represent.
-
    * **`math.abs`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.abs)
    * **`math.acos`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.acos)
    * **`math.asin`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.asin)
@@ -100,38 +98,44 @@ The math library.  All functions are
    * **`math.tanh`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.tanh)
 
 
+bit32
+-----
 
+A table containing the bit manipulation library.  
+????The entire [standard Lua math library](http://www.lua.org/manual/5.2/manual.html#6.6) is present.
 
+   * **`bit32.extract`**
+   * **`bit32.replace`**
+   * **`bit32.arshift`**
+   * **`bit32.rshift`**
+   * **`bit32.lshift`**
+   * **`bit32.band`**
+   * **`bit32.btest`**
+   * **`bit32.bor`**
+   * **`bit32.bnot`**
+   * **`bit32.bxor`**
+   * **`bit32.lrotate`**
+   * **`bit32.rrotate`**
+
+_MOONSHARP
+----------
+
+Information about the MoonSharp implementation.  It is recommended that Lua puzzles do not interact with these variables.  The below values are from the Linux version of TIS-100 and may vary on other platforms.
+
+   * **`is_aot`** = false
+   * **`is_clr4`** = false
+   * **`is_mono`** = true
+   * **`is_pcl`** = false
+   * **`is_unity`** = true
+   * **`luacompat`** = "5.2"
+   * **`platform`** = "limited.unity.mono.clr2"
+   * **`version`** = "0.9.5.0"
 
 Other
 -----
 
    * **`_G`** - _Base Lua._ A table containing all of these variables, tables, and functions, including `_G` itself.
 
-   * **`bit32`** -        TABLE
-     * **`extract`**
-     * **`replace`**
-     * **`arshift`**
-     * **`rshift`**
-     * **`lshift`**
-     * **`band`**
-	 * **`btest`**
-	 * **`bor`**
-	 * **`bnot`**
-	 * **`bxor`**
-	 * **`lrotate`**
-	 * **`rrotate`**
-
-   * **`_MOONSHARP`** -   Information about the MoonSharp implementation.  It is recommended that Lua puzzles do not interact with these variables.  The below values are from the Linux version of TIS-100 and may vary on other platforms.
-
-     * **`is_aot`** = false
-     * **`is_clr4`** = false
-     * **`is_mono`** = true
-     * **`is_pcl`** = false
-     * **`is_unity`** = true
-     * **`luacompat`** = "5.2"
-     * **`platform`** = "limited.unity.mono.clr2"
-     * **`version`** = "0.9.5.0"
 
    * **`package.loaded`** - `package` only contains `loaded`
 
