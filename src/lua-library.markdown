@@ -1,6 +1,8 @@
 Lua Library
 ===========
 
+**THIS IS AN INCOMPLETE DRAFT**
+
 These are the functions and variables exposed to the [Lua puzzle programs](lua.html)
 
    * _Base_ are part of the base Lua release
