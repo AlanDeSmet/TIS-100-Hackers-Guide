@@ -8,7 +8,7 @@ See Also
 Speed
 -----
 
-_These are preliminary results._ The TIS-100 runs at 50 Hz in RUN mode, 5,000 Hz in FAST mode, and 25 Hz when STEP is held down.  Most assembly instructions run in a single cycle; `MOV` takes two cycles under some circumstances.
+The TIS-100 runs at 50 Hz in RUN mode, 5,000 Hz in FAST mode, and 25 Hz when the STEP key (F6) is held down.  (Holding the STEP button down only runs a single step.)   Most assembly instructions run in a single cycle; `MOV` takes two cycles under some circumstances.
 
 
 Overall Node Behavior
