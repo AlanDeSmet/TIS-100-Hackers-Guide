@@ -77,8 +77,10 @@ end
 <p>The values are an array of integers.</p>
 
 <p>For <code>STREAM_INPUT</code> and <code>STREAM_OUTPUT</code>, the values should be in
-the range -999 through 999.  These streams can only display the
+the range -99 through 999.  These streams can only display the
 first 39 elements.</p>
+
+<p>Numbers outside of the range of -99 through 999 are clamped to -99 or 999.</p>
 
 <p>For <code>STREAM_IMAGE</code>, the values should be in the range 0 through
 4.  There must be exactly 540 values, enough to fill a 30×18

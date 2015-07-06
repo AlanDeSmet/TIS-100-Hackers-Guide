@@ -68,10 +68,10 @@ The position is an integer from 0 through 3 representing the which column of nod
 The values are an array of integers.
 
 For `STREAM_INPUT` and `STREAM_OUTPUT`, the values should be in
-the range -999 through 999.  These streams can only display the
+the range -99 through 999.  These streams can only display the
 first 39 elements.
 
-**TODO:** Current release may now longer accept input or output < -99, specifically to avoid the overflow rendering problem.
+Numbers outside of the range of -99 through 999 are clamped to -99 or 999.
 
 For `STREAM_IMAGE`, the values should be in the range 0 through
 4.  There must be exactly 540 values, enough to fill a 30×18
