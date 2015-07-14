@@ -98,11 +98,11 @@ The values are interpreted as:</p>
 
 <p>(<a href="display.html">How STREAM_IMAGE behaves from the TIS-100 assembly point of view.</a>)</p>
 
-<p><code>get_streams()</code> will be called twice, once for the first run of
-a program and again for the second.  The first time math.random()
+<p><code>get_streams()</code> will be called four times, once for each test.
+The first three times math.random()
 will be seeded with a fixed value to ensure that the first page
 is identical between runs.
-The fixed value is the <code>SPEC</code> or <code>SEGMENT</code> number.
+(Before July 13, 2015, the fixed value is the <code>SPEC</code> or <code>SEGMENT</code> number.  This is no longer true.)
 The second time it is seeded with an
 arbitrary number so that the second page is not predictable.
 Generally the values from
