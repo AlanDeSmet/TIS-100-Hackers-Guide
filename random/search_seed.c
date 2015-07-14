@@ -27,7 +27,7 @@ void report_progress_tracker(progress_tracker * p, int32_t i) {
 	rate = ((float)i)/(float)(now - p->start);
 	left = ((float)todo)/rate;
 
-	printf("%d (%.2f%%, %.0f per second, %.0f seconds to go)\n", i, portion*100.0, rate, left);
+	printf("%10d (%.2f%%, %.0f per second, %.0f seconds to go)\n", i, portion*100.0, rate, left);
 }
 
 void delete_progress_tracker(progress_tracker * p) {
@@ -48,7 +48,7 @@ int validate(int32_t seed) {
 	return 1;
 }
 
-#define REPORT_FREQ 100000
+#define REPORT_FREQ 250000
 
 int main(int argc, char * argv[]) {
 	int i = 0;
