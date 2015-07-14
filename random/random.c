@@ -17,7 +17,7 @@
 static int inext,inextp;
 static long ma[56];
 
-float math_randomseed(int32_t idum) {
+void math_randomseed(int32_t idum) {
 	long mj,mk;
 	int i,ii,k;
 	mj=labs(MSEED-labs(idum));
