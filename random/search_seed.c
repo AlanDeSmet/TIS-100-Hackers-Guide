@@ -27,7 +27,8 @@ void report_progress_tracker(progress_tracker * p, int32_t i) {
 	rate = ((float)i)/(float)(now - p->start);
 	left = ((float)todo)/rate;
 
-	printf("%10d (%.2f%%, %.0f per second, %.0f seconds to go)\n", i, portion*100.0, rate, left);
+	printf("%10d (%.2f%%, %.0f per second, %.0f seconds to go)              \r", i, portion*100.0, rate, left);
+	fflush(stdout);
 }
 
 void delete_progress_tracker(progress_tracker * p) {
@@ -87,7 +88,7 @@ int main(int argc, char * argv[]) {
 			report_progress_tracker(p, i);
 		}
 		if(validate(expected, i)) {
-			printf("The seed is %d\n", i);
+			printf("\nThe seed is %d\n", i);
 			return 0;
 		}
 	}
