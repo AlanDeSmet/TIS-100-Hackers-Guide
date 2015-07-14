@@ -22,6 +22,9 @@ search: random.o search_seed.o
 IN: IN.1 IN.2 IN.3 IN.4
 	cat IN.1 IN.2 IN.3 IN.4 > $@
 
+1.IN: 1.IN.1 1.IN.2 1.IN.3 1.IN.4
+	cat 1.IN.1 1.IN.2 1.IN.3 1.IN.4 > $@
+
 .c.o:
 	gcc -g -c -o $*.o $<
 	#gcc -g -c -o $*.o $<
