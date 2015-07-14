@@ -23,4 +23,5 @@ IN: IN.1 IN.2 IN.3 IN.4
 	cat IN.1 IN.2 IN.3 IN.4 > $@
 
 .c.o:
-	gcc -c -o $*.o $<
+	gcc -g -c -o $*.o $<
+	#gcc -g -c -o $*.o $<
