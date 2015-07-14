@@ -38,27 +38,26 @@ void delete_progress_tracker(progress_tracker * p) {
 
 int validate(int32_t *expected,int32_t seed) {
 	int i;
-	int counter = 0;
 	math_randomseed(seed);
 	for(i=0; i < 39; i++) {
 		int32_t this = math_random(1,3);
-		if(this != expected[counter]) { return 0; }
-		counter++;
+		if(this != *expected) { return 0; }
+		expected++;
 	}
 	for(i=0; i < 39; i++) {
 		int32_t this = math_random(1,999);
-		if(this != expected[counter]) { return 0; }
-		counter++;
+		if(this != *expected) { return 0; }
+		expected++;
 	}
 	for(i=0; i < 39; i++) {
 		int32_t this = math_random(-3,-1);
-		if(this != expected[counter]) { return 0; }
-		counter++;
+		if(this != *expected) { return 0; }
+		expected++;
 	}
 	for(i=0; i < 39; i++) {
 		int32_t this = math_random(-99,999);
-		if(this != expected[counter]) { return 0; }
-		counter++;
+		if(this != *expected) { return 0; }
+		expected++;
 	}
 	return 1;
 }
