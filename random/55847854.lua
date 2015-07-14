@@ -11,7 +11,7 @@ function get_description()
 end
 
 function get_streams()
-	math.randomseed(55847854)
+	--math.randomseed(55847854)
 	-- It's important to build an entire stream before
 	-- moving to the next so it's clear how math.random
 	-- is being called.
