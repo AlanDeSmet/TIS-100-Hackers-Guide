@@ -16,6 +16,9 @@ all: IN a.out
 a.out: random.o validator.o
 	gcc -o $@ $^ -lm
 
+search: random.o search_seed.o
+	gcc -o $@ $^ -lm
+
 IN: IN.1 IN.2 IN.3 IN.4
 	cat IN.1 IN.2 IN.3 IN.4 > $@
 
