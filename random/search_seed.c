@@ -6,33 +6,25 @@
 #include <time.h>
 
 
-typedef struct progress_tracker {
-	int32_t count;
-	time_t start;
-} progress_tracker;
+int32_t progress_count;
+time_t progress_start;
 
-progress_tracker * new_progress_tracker(int32_t count) {
-	progress_tracker * ret = malloc(sizeof(progress_tracker));
-	ret->count = count;
-	ret->start = time(NULL);
-	return ret;
+void init_progress_tracker(int32_t count) {
+	progress_count = count;
+	progress_start = time(NULL);
 }
 
-void report_progress_tracker(progress_tracker * p, int32_t i) {
+void report_progress_tracker(int32_t i) {
 	float rate;
-	float portion = (float)i / (float)p->count;
-	int32_t todo = p->count - i;
+	float portion = (float)i / (float)progress_count;
+	int32_t todo = progress_count - i;
 	float left;
 	time_t now = time(NULL);
-	rate = ((float)i)/(float)(now - p->start);
+	rate = ((float)i)/(float)(now - progress_start);
 	left = ((float)todo)/rate;
 
 	printf("%10d (%.2f%%, %.0f per second, %.0f seconds to go)              \r", i, portion*100.0, rate, left);
 	fflush(stdout);
-}
-
-void delete_progress_tracker(progress_tracker * p) {
-	free(p);
 }
 
 
@@ -62,7 +54,7 @@ int validate(int32_t *expected,int32_t seed) {
 	return 1;
 }
 
-#define REPORT_FREQ 250000
+#define REPORT_FREQ 500000
 
 int main(int argc, char * argv[]) {
 	int i = 0;
@@ -81,17 +73,16 @@ int main(int argc, char * argv[]) {
 		expected[i] = atoi(line);
 	}
 
-	progress_tracker * p = new_progress_tracker(INT32_MAX);
+	init_progress_tracker(INT32_MAX);
 	for(i = 0; i < INT32_MAX; i++) {
 		if((i%REPORT_FREQ) == 0) {
-			report_progress_tracker(p, i);
+			report_progress_tracker(i);
 		}
 		if(validate(expected, i)) {
 			printf("\nThe seed is %d\n", i);
 			return 0;
 		}
 	}
-	delete_progress_tracker(p);
 
 	/*validate(55847854);*/
 
