@@ -7,7 +7,7 @@ Instead they probably come from [MoonSharp](http://www.moonsharp.org/), a Lua in
 
 The only difference from the _Numerical Recipes_ version (besides the interface) is that MBIG has been replaced with 2147483647 , which is 2<sup>31</sup>-1, or the largest 32-bit signed integer using two's complement.
 
-   * [random.c](random/random.c) - Implementation of TIS-100's random number generator in C
+   * [random.c](random/random.c) [random.h](random/random.h) - Implementation of TIS-100's random number generator in C
    * [random.lua](random/random.lua) - Implementation of TIS-100's random number generator in Lua
    * [55847854.lua](random/55847854.lua) - Puzzle for TIS-100 that generates sequences for testing implementations.
    * [IN.1](random/IN.1), [IN.2](random/IN.2), [IN.3](random/IN.3), [IN.4](random/IN.4) - Test data
