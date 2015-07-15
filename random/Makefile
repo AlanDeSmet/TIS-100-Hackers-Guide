@@ -10,9 +10,9 @@ testlua: 55847854.1.IN 55847854.2.IN random.lua validator.lua
 	diff 55847854.2.IN lua.TEST
 
 testc: 55847854.1.IN 55847854.2.IN validator
-	lua validator 55847854 1 > c.TEST
+	./validator 55847854 1 > c.TEST
 	diff 55847854.1.IN c.TEST
-	lua validator 55847854 2 > c.TEST
+	./validator 55847854 2 > c.TEST
 	diff 55847854.2.IN c.TEST
 
 validator: random.o validator.o
