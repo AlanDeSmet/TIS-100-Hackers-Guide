@@ -1,7 +1,6 @@
-#! /usr/bin/lua
- 
--- This is based on ran3 from Numerical Methods in C, Second Edition
--- It has been modified to roughly match the Lua math.random/math.randomseed
+-- math_randomseed and math_random are based on ran3 from 
+-- Numerical Methods in C, Second Edition.  It has been 
+-- modified to roughly match the Lua math.random/math.randomseed
 -- interface.
 
 -- This is MAX_INT, and matches TIS-100's behavior
@@ -15,7 +14,7 @@ local inextp = 31
 local ma = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 
 function math_randomseed(idum)
-	local mj = math.abs(MSEED - math.abs(idum))
+	local mj = MSEED - math.abs(idum)
 	
 	mj = mj % MBIG
 	ma[55] = mj
@@ -53,8 +52,7 @@ function math_random(mini, maxi)
  	return math.floor((f * range) + mini);
 end
 
-math_randomseed(55847854)
-for i=1,39 do print(math_random(1,3)) end
-for i=1,39 do print(math_random(1,999)) end
-for i=1,39 do print(math_random(-3,-1)) end
-for i=1,39 do print(math_random(-99,999)) end
+function calculate_seed(specnum, test)
+	return (specnum * 100 + test - 1) % 4294967296 -- 2^32
+end
+

@@ -3,28 +3,27 @@ test: testlua testc
 clean:
 	rm -f a.out IN lua.TEST c.TEST
 
-testlua: IN random.lua
-	lua random.lua > lua.TEST
-	diff IN lua.TEST
+testlua: 55847854.1.IN 55847854.2.IN random.lua validator.lua
+	lua validator.lua 55847854 1 > lua.TEST
+	diff 55847854.1.IN lua.TEST
+	lua validator.lua 55847854 2 > lua.TEST
+	diff 55847854.2.IN lua.TEST
 
-testc: IN a.out
-	./a.out > c.TEST
-	diff IN c.TEST
+testc: 55847854.1.IN 55847854.2.IN validator
+	lua validator 55847854 1 > c.TEST
+	diff 55847854.1.IN c.TEST
+	lua validator 55847854 2 > c.TEST
+	diff 55847854.2.IN c.TEST
 
-all: IN a.out
-
-a.out: random.o validator.o
+validator: random.o validator.o
 	gcc -o $@ $^ -lm
 
 search: random.o search_seed.o
 	gcc -o $@ $^ -lm
 
-IN: IN.1 IN.2 IN.3 IN.4
-	cat IN.1 IN.2 IN.3 IN.4 > $@
-
 %.IN: %.IN.1 %.IN.2 %.IN.3 %.IN.4
 	cat $^ > $@
 
 .c.o:
-	gcc -O3 -march=native -c -o $*.o $<
-	#gcc -g -c -o $*.o $<
+	gcc -g -c -o $*.o $<
+	#gcc -O3 -march=native -c -o $*.o $<

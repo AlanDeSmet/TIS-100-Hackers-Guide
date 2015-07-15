@@ -20,7 +20,7 @@ static long ma[56];
 void math_randomseed(int32_t idum) {
 	long mj,mk;
 	int i,ii,k;
-	mj=labs(MSEED-labs(idum));
+	mj=MSEED-labs(idum);
 	mj %= MBIG;
 	ma[55]=mj;
 	mk=1;
@@ -54,5 +54,9 @@ int32_t math_random(int32_t mini, int32_t maxi) {
 
 	range = 1+maxi-mini;
 	return floor(f * range) + mini;
+}
+
+int32_t calculate_seed(int32_t specnum, int32_t test) {
+	return (((int64_t)specnum) * 100 + test - 1) % 4294967296;
 }
 
