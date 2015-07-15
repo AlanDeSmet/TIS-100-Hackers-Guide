@@ -7,7 +7,6 @@
 int main(int argc, char * argv[]) {
 	int i = 0;
 	float f;
-	int32_t out;
 	int32_t seed;
 	int32_t spec;
 	int32_t test;
