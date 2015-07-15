@@ -15,7 +15,7 @@
 
 <p>Instead they probably come from <a href="http://www.moonsharp.org/">MoonSharp</a>, a Lua interpreter written in C#.  That is probably calling into Unity's System.Random.  That is probably based on C#'s <a href="http://referencesource.microsoft.com/#mscorlib/system/random.cs,bb77e610694e64ca">random.cs</a>. That, and thus TIS-100, is based on <code>ran3()</code> from <em>Numerical Recipes in C, Second Edition</em>.  <em>That</em> is based on a random number generator by Donald Knuth in <em>Seminumerical Algorithms, second edition</em>, volume 2 of <em>The Art of Computer Programming</em>, sections 3.2-3.3.</p>
 
-<p>The only difference from the <em>Numerical Recipes</em> version (besides the interface) is that MBIG has been replaced with 2147483647 , which is 2<sup>31</sup>-1, or the largest 32-bit signed integer using two's complement.</p>
+<p>There are two differences from the <em>Numerical Recipes</em> version (besides the interface).  First, MBIG has been replaced with 2147483647 , which is 2<sup>31</sup>-1, or the largest 32-bit signed integer using two's complement.  Second, the outer labs() call in the initial calculation of mj was removed.</p>
 
 <ul>
 <li><a href="random/random.c">random.c</a> <a href="random/random.h">random.h</a> - Implementation of TIS-100's random number generator in C
@@ -30,7 +30,7 @@
 </li>
 </ul>
 
-<p>Many thanks to Rohansi on Reddit for discovering the MoonSharp to Unity to C# link and pointing me at the C# implementation.</p>
+<p>Many thanks to Rohansi on Reddit for discovering the MoonSharp to Unity to C# link and pointing me at the C# implementation.  Thanks to AapOpSokken on Reddit for catching that the labs() was removed.</p>
 
 
 <div class="copyright">

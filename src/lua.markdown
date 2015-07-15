@@ -91,11 +91,12 @@ The values are interpreted as:
 
 `get_streams()` will be called four times, once for each test.
 The first three times math.random()
-will be seeded with a fixed value to ensure that the first page
-is identical between runs.
-(Before July 13, 2015, the fixed value is the `SPEC` or `SEGMENT` number.  This is no longer true.)
-The second time it is seeded with an
-arbitrary number so that the second page is not predictable.
+will be seeded with a fixed value to ensure that the tests
+are identical between runs.
+If the SPEC number is s, and the test number t=1,2,3, then
+the seed is (100s+t−1) mod 2<sup>32</sup>.
+The fourth time it is seeded with an
+arbitrary number so that the last test is not predictable.
 Generally the values from
 `get_streams()` should be randomly generated.  Code should use
 `math.random(min,max)` to generate random numbers.  Code should
@@ -165,3 +166,6 @@ In this example the entire right column is damaged, the top and bottom nodes on 
 	end
 
 
+### Notes
+
+Many thanks to AapOpSokken on Reddit the updated algorithm for calculating the seed.
