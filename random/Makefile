@@ -1,7 +1,7 @@
 test: testlua testc
 
 clean:
-	rm -f a.out IN lua.TEST c.TEST
+	rm -f validator IN lua.TEST c.TEST random.o validator.o 55847854.1.IN 55847854.2.IN
 
 testlua: 55847854.1.IN 55847854.2.IN random.lua validator.lua
 	lua validator.lua 55847854 1 > lua.TEST
