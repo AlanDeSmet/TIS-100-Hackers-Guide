@@ -40,6 +40,12 @@ function math_randomseed(idum)
 end
 
 function math_random(mini, maxi)
+	if(mini > maxi) then
+		tmp = maxi
+		maxi = mini
+		mini = tmp
+	end
+
 	inext = inext+1
  	if inext == 56 then inext=1 end
 	inextp = inextp+1

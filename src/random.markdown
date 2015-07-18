@@ -7,6 +7,8 @@ Instead they probably come from [MoonSharp](http://www.moonsharp.org/), a Lua in
 
 There are two differences from the _Numerical Recipes_ version (besides the interface).  First, MBIG has been replaced with 2147483647 , which is 2<sup>31</sup>-1, or the largest 32-bit signed integer using two's complement.  Second, the outer labs() call in the initial calculation of mj was removed.
 
+Like Lua's math.random, the order of the arguments doesn't matter.  Similarly to Lua, if a single argument is given, it behaves as tough the second argument is 1.  _Unlike_ Lua, a single negative argument is valid, so math.random(-2) is equivalent to math.random(-2,1), while official Lua would fail with "bad argument #1 to 'random' (interval is empty)".
+
    * [random.c](random/random.c) [random.h](random/random.h) - Implementation of TIS-100's random number generator in C
    * [random.lua](random/random.lua) - Implementation of TIS-100's random number generator in Lua
    * [55847854.lua](random/55847854.lua) - Puzzle for TIS-100 that generates sequences for testing implementations.
