@@ -50,6 +50,13 @@ int32_t math_random(int32_t mini, int32_t maxi) {
 		initialized = 1;
 	}
 
+	if(mini > maxi) {
+		int tmp;
+		tmp = maxi;
+		maxi = mini;
+		mini = tmp;
+	}
+
 	if (++inext == 56) inext=1;
 	if (++inextp == 56) inextp=1;
 	mj=ma[inext]-ma[inextp];
