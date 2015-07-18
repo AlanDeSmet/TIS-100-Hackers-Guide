@@ -91,7 +91,7 @@ A table containing the math library.  The entire [standard Lua math library](htt
    * **`math.modf`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.modf)
    * **`math.pow`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.pow)
    * **`math.rad`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.rad)
-   * **`math.random`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.random)
+   * **`math.random`** - _Base_ This is slightly different from the standard implementaiton; see [math.random()](random.html) for details. [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.random)
    * **`math.randomseed`** - _Base_ _Do not use: of dubious use in puzzle Lua._  TIS-100 will handle seeding the random number generator to ensure the first three tests are constant.  See [the Puzzle Lua page](lua.html) for details. [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.randomseed)
    * **`math.sin`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.sin)
    * **`math.sinh`** - _Base_ [Lua documentation](http://www.lua.org/manual/5.2/manual.html#pdf-math.sinh)
