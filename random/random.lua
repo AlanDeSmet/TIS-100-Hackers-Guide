@@ -52,6 +52,8 @@ function math_random(mini, maxi)
  	return math.floor((f * range) + mini);
 end
 
+math_randomseed(0)
+
 function calculate_seed(specnum, test)
 	return (specnum * 100 + test - 1) % 4294967296 -- 2^32
 end
