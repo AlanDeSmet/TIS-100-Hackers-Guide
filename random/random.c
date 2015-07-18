@@ -17,9 +17,14 @@
 static int inext,inextp;
 static long ma[56];
 
+static int initialized = 0;
+
 void math_randomseed(int32_t idum) {
 	long mj,mk;
 	int i,ii,k;
+
+	initialized = 1;
+
 	mj=MSEED-labs(idum);
 	mj %= MBIG;
 	ma[55]=mj;
@@ -44,11 +49,7 @@ int32_t math_random(int32_t mini, int32_t maxi) {
 	long mj;
 	int32_t range;
 	float f;
-	static int initialized = 0;
-	if(!initialized) {
-		math_randomseed(0);
-		initialized = 1;
-	}
+	if(!initialized) { math_randomseed(0); }
 
 	if(mini > maxi) {
 		int tmp;
