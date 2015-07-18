@@ -19,6 +19,9 @@ testc: 55847854.1.IN 55847854.2.IN validator
 validator: random.o validator.o
 	gcc -o $@ $^ -lm
 
+unittest: random.o unittest.o
+	gcc -o $@ $^ -lm
+
 %.IN: %.IN.1 %.IN.2 %.IN.3 %.IN.4
 	cat $^ > $@
 
