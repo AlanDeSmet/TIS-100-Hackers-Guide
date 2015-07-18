@@ -17,7 +17,7 @@
 
 <p>There are two differences from the <em>Numerical Recipes</em> version (besides the interface).  First, MBIG has been replaced with 2147483647 , which is 2<sup>31</sup>-1, or the largest 32-bit signed integer using two's complement.  Second, the outer labs() call in the initial calculation of mj was removed.</p>
 
-<p>Like Lua's math.random, the order of the arguments doesn't matter.  Similarly to Lua, if a single argument is given, it behaves as tough the second argument is 1.  <em>Unlike</em> Lua, a single negative argument is valid, so math.random(-2) is equivalent to math.random(-2,1), while official Lua would fail with "bad argument #1 to 'random' (interval is empty)".</p>
+<p>Like Lua's math.random, the order of the arguments doesn't matter.  Similarly to Lua, if a single argument is given, it behaves as tough the second argument is 1.  <em>Unlike</em> Lua, a single negative argument is valid, so math.random(-2) is equivalent to math.random(-2,1), while official Lua would fail with "bad argument #1 to 'random' (interval is empty)".  Given no arguments, returns 0.</p>
 
 <ul>
 <li><a href="random/random.c">random.c</a> <a href="random/random.h">random.h</a> - Implementation of TIS-100's random number generator in C
