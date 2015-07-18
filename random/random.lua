@@ -39,7 +39,13 @@ function math_randomseed(idum)
 	inextp = 31
 end
 
-function math_random(mini, maxi)
+function math_random(mini, ...)
+	local arg = {...}
+	if arg[1] ~= nil then
+		maxi = arg[1]
+	else
+		maxi = 1
+	end
 	if(mini > maxi) then
 		tmp = maxi
 		maxi = mini
