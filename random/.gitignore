@@ -1,3 +1,7 @@
 *.swp
 *.o
+55847854.1.IN
+55847854.2.IN
 validator
+unittest
+*.TEST
