@@ -4,6 +4,7 @@ clean:
 	rm -f validator IN lua.TEST c.TEST random.o validator.o 55847854.1.IN 55847854.2.IN
 
 testlua: 55847854.1.IN 55847854.2.IN random.lua validator.lua
+	lua unittest.lua
 	lua validator.lua 55847854 1 > lua.TEST
 	diff 55847854.1.IN lua.TEST
 	lua validator.lua 55847854 2 > lua.TEST
