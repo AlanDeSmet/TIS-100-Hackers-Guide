@@ -44,6 +44,11 @@ int32_t math_random(int32_t mini, int32_t maxi) {
 	long mj;
 	int32_t range;
 	float f;
+	static int initialized = 0;
+	if(!initialized) {
+		math_randomseed(0);
+		initialized = 1;
+	}
 
 	if (++inext == 56) inext=1;
 	if (++inextp == 56) inextp=1;
