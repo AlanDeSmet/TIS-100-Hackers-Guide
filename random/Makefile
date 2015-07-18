@@ -1,7 +1,7 @@
 test: testlua testc
 
 clean:
-	rm -f validator IN lua.TEST c.TEST random.o validator.o 55847854.1.IN 55847854.2.IN
+	rm -f validator IN lua.TEST c.TEST random.o validator.o 55847854.1.IN 55847854.2.IN unittest unittest.o
 
 testlua: 55847854.1.IN 55847854.2.IN random.lua validator.lua
 	lua unittest.lua
