@@ -11,8 +11,7 @@ Like Lua's math.random, the order of the arguments doesn't matter.  Similarly to
 
    * [random.c](random/random.c) [random.h](random/random.h) - Implementation of TIS-100's random number generator in C
    * [random.lua](random/random.lua) - Implementation of TIS-100's random number generator in Lua
-   * [55847854.lua](random/55847854.lua) - Puzzle for TIS-100 that generates sequences for testing implementations.
-   * [IN.1](random/IN.1), [IN.2](random/IN.2), [IN.3](random/IN.3), [IN.4](random/IN.4) - Test data
-   * [Makefile](random/Makefile) - Runs tests against the above implementations
+
+[A small test suit for a C or Lua implementation of the random functions is available in the "random" subdirectory in this project at GitHub.](https://github.com/AlanDeSmet/TIS-100-Hackers-Guide)
 
 Many thanks to Rohansi on Reddit for discovering the MoonSharp to Unity to C# link and pointing me at the C# implementation.  Thanks to AapOpSokken on Reddit for catching that the labs() was removed.
