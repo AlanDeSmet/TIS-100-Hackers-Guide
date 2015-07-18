@@ -64,5 +64,13 @@ for i=-2,1 do
 	assert(output[i] > 200 and output[i] < 300)
 end
 
+output= {0}
+for i=1,1000 do
+	x = math_random()
+	output[x+1] = output[x+1] + 1
+end
+assert(output[1] == 1000)
+
+
 print("Lua unit tests passed")
 os.exit(0)
