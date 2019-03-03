@@ -137,7 +137,7 @@ The _source_ value is subtracted to the value in ACC, and the result placed in A
 
 ### NEG - Negate - 1 cycle
 
-**Syntax:** `NEG` _source_
+**Syntax:** `NEG` 
 
 The value in ACC is negative (swapped between positive and negative) and written back into ACC.  0 is left unchanged.
 
