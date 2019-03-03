@@ -5,9 +5,9 @@ Save File Format EARLY DRAFT
 
 Save files are stored in a user specific location:
 
-   * Windows: TODO
-   * Mac OS X: TODO
-   * Linux: $(HOME)/.local/share/TIS-100/$(USERID)/save and save.dat
+   * Windows: `%userprofile%\Documents\My Games\TIS-100\(USERID)\save and save.dat`
+   * Mac OS X: `~/Library/Application Support/TIS-100/0/save and save.dat`
+   * Linux: `~/.local/share/TIS-100/$(USERID)/save and save.dat`
 
 $(USERID) is a integer number, not zero padded. It may be 17 or 18 digits long.
     
