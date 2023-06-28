@@ -66,7 +66,7 @@ Storage
 
 **`LAST`** - Port. Refers to the same port used by the last reference to `ANY`, either in read or write.  If `ANY` has not been used, attempts to use `LAST` as a _source_ will return 0, while attempts to use `LAST` as a _destination_ will block forever.
 
-_source_ can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, LAST, or an integer from −999 through 999, inclusive.  If the value is an integer, it is used directory.  Otherwise the register or port is read for the value to use.
+_source_ can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, LAST, or an integer from −999 through 999, inclusive.  If the value is an integer, it is used directly.  Otherwise the register or port is read for the value to use.
 
 _destination_ can be ACC, NIL, UP, DOWN, LEFT, RIGHT, ANY, or LAST.
 
